@@ -1,0 +1,2 @@
+* My Doom Emacs Configuration
+This is my Doom Emacs Configuration files. It's not very customized, but it meets my needs 😌

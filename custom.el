@@ -11,3 +11,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+(after! web-mode
+  (add-to-list 'auto-mode-alist '("\\.astro\\'" . web-mode))
+  (setq web-mode-content-types-alist '(("astro" . "\\.astro\\'")))
+  (add-hook 'web-mode-hook #'lsp))

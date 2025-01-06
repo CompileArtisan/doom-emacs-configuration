@@ -66,3 +66,6 @@
 ;; Tree-sitter support
 (package! tree-sitter)
 (package! tree-sitter-langs)
+
+(package! lsp-mode)
+(package! web-mode)

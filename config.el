@@ -116,13 +116,13 @@
 
 (map! "C-/" #'+vterm/here)
 
-(use-package! centaur-tabs
-  :config
-  (centaur-tabs-mode t)
-  (setq centaur-tabs-set-icons t)
-  (setq centaur-tabs-set-modified-marker t)
-  (setq centaur-tabs-modified-marker "*")
-  (setq centaur-tabs-close-button "x"))
+;; (use-package! centaur-tabs
+;;   :config
+;;   (centaur-tabs-mode t)
+;;   (setq centaur-tabs-set-icons t)
+;;   (setq centaur-tabs-set-modified-marker t)
+;;   (setq centaur-tabs-modified-marker "*")
+;;   (setq centaur-tabs-close-button "x"))
 
 
 (after! eyebrowse
