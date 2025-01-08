@@ -69,3 +69,6 @@
 
 (package! lsp-mode)
 (package! web-mode)
+(package! pdf-tools)
+(package! auctex)
+(package! latex-preview-pane)

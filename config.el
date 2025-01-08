@@ -89,6 +89,78 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 ;; Define keybindings
+
+(use-package pdf-tools
+  :defer t
+  :commands (pdf-loader-install)
+  :mode "\\.pdf\\'"
+  :bind (:map pdf-view-mode-map
+              ("j" . pdf-view-next-line-or-next-page)
+              ("k" . pdf-view-previous-line-or-previous-page)
+              ("C-+" . pdf-view-enlarge)
+              ("C--" . pdf-view-shrink))
+  :init (pdf-loader-install)
+  :config
+  (add-to-list 'revert-without-query ".pdf"))
+
+(add-hook 'pdf-view-mode-hook
+          (lambda ()
+            (display-line-numbers-mode -1)))
+;; Set up TeX-master properly
+(after! tex
+  (setq TeX-auto-save t)
+  (setq TeX-parse-self t)
+  ;; Tell AUCTeX to use the current file as master by default
+  (setq-default TeX-master t)
+
+  ;; For WSL path handling
+  (setq TeX-parse-all-errors t)
+
+  ;; Use latexmk as the default command
+  (setq TeX-command-default "LatexMk"))
+
+;; Configure latex-preview-pane
+(use-package! latex-preview-pane
+  :after latex
+  :commands latex-preview-pane-mode
+  :init
+  (setq latex-preview-pane-multifile-mode 'auctex)
+  (setq latex-preview-pane-update-delay 0.1)
+  :config
+  ;; Set the default program for opening PDFs
+  (setq latex-preview-pane-pdf-view-command "evince")
+
+  ;; Add WSL-specific path conversion if needed
+  (when (and (eq system-type 'gnu/linux)
+             (string-match "Microsoft" (shell-command-to-string "uname -a")))
+    (setq latex-preview-pane-path-translation-mappings
+          '(("/mnt/c/" . "C:/"))))
+
+  ;; Enable the preview pane
+  (latex-preview-pane-enable))
+
+;; Better auto-save configuration
+(add-hook! 'latex-mode-hook
+  (lambda ()
+    ;; Set the master file to the current file if not already set
+    (unless TeX-master
+      (setq TeX-master (buffer-file-name)))
+
+    ;; Enable auto-save
+    (auto-save-mode +1)
+    (setq auto-save-timeout 1)
+    (setq auto-save-interval 1)))
+
+;; Force update function
+(defun force-latex-preview-update ()
+  (interactive)
+  (when (bound-and-true-p latex-preview-pane-mode)
+    (latex-preview-pane-update)))
+
+;; Bind it to a key
+(map! :map latex-mode-map
+      :localleader
+      "p" #'force-latex-preview-update)
 (map!
  ;; Leader key bindings (like LazyVim's which-key menu)
  :leader
@@ -117,7 +189,6 @@
       "]b" #'next-buffer
       "[b" #'previous-buffer)
 
-(map! "C-/" #'+vterm/here)
 
 ;; (use-package! centaur-tabs
 ;;   :config
