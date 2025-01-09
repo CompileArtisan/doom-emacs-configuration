@@ -139,6 +139,8 @@
   ;; Enable the preview pane
   (latex-preview-pane-enable))
 
+(after! org (setq org-babel-default-header-args:java '((:dir . nil) (:results . "value")))) (org-babel-do-load-languages 'org-babel-load-languages '((java . t)))
+
 ;; Better auto-save configuration
 (add-hook! 'latex-mode-hook
   (lambda ()
