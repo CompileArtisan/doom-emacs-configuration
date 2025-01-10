@@ -34,12 +34,11 @@
 (setq doom-big-font (font-spec :family "JetBrainsMono Nerd Font Mono"
                               :size 28))
 
-(custom-set-faces!
-  `(org-level-1 :height 1.4 :weight bold :inherit org-level-1)
-  `(org-level-2 :height 1.3 :weight semi-bold :inherit org-level-2)
-  `(org-level-3 :height 1.2 :weight normal :inherit org-level-3)
-  `(org-document-title :height 1.5 :weight bold :inherit org-document-title)
-)
+(after! org
+  (set-face-attribute 'org-level-1 nil :height 1.4 :weight 'bold)
+  (set-face-attribute 'org-level-2 nil :height 1.3 :weight 'semi-bold)
+  (set-face-attribute 'org-level-3 nil :height 1.2 :weight 'normal)
+  (set-face-attribute 'org-document-title nil :height 1.5 :weight 'bold))
 ;;      doom-variable-pitch-font (font-spec :family "JetBrainsMono Nerd Font Mono" :size 13))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
