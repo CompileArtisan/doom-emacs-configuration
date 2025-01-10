@@ -35,9 +35,9 @@
                               :size 28))
 
 (after! org
-  (set-face-attribute 'org-level-1 nil :height 1.4 :weight 'bold)
-  (set-face-attribute 'org-level-2 nil :height 1.3 :weight 'semi-bold)
-  (set-face-attribute 'org-level-3 nil :height 1.2 :weight 'normal)
+  (set-face-attribute 'org-level-1 nil :height 1.1 :weight 'normal)
+  (set-face-attribute 'org-level-2 nil :height 1.1 :weight 'normal)
+  (set-face-attribute 'org-level-3 nil :height 1.1 :weight 'normal)
   (set-face-attribute 'org-document-title nil :height 1.5 :weight 'bold))
 ;;      doom-variable-pitch-font (font-spec :family "JetBrainsMono Nerd Font Mono" :size 13))
 ;;
