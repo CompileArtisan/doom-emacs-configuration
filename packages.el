@@ -72,3 +72,4 @@
 (package! pdf-tools)
 (package! auctex)
 (package! latex-preview-pane)
+(package! minimap)

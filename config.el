@@ -60,7 +60,17 @@
 (setq org-directory "~/org/")
 
 
-(map! :i "[" #'self-insert-command)
+(use-package! minimap
+  :config
+  (setq minimap-window-location 'right
+        minimap-width-fraction 0.09
+        minimap-minimum-width 15
+        minimap-hide-cursor t
+        minimap-hide-fringes t)
+  ;; Make the minimap background work with dark themes
+  (custom-set-faces!
+    '(minimap-active-region-background
+      :background "#000000")))
 
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
