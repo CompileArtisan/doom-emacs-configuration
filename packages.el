@@ -73,3 +73,4 @@
 (package! auctex)
 (package! latex-preview-pane)
 (package! minimap)
+(package! web-mode)

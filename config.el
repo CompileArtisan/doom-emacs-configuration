@@ -106,6 +106,22 @@
 ;; they are implemented.
 ;; Define keybindings
 
+;; Web-mode configuration for HTML
+(use-package! web-mode
+  :mode "\\.html?\\'"
+  :config
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq web-mode-code-indent-offset 2)
+  (setq web-mode-enable-auto-pairing t)
+  (setq web-mode-enable-auto-closing t))
+;; Configure web-mode for Astro files
+(add-to-list 'auto-mode-alist '("\\.astro\\'" . web-mode))
+(after! web-mode
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-code-indent-offset 2)
+  (setq web-mode-css-indent-offset 2))
+
 (use-package pdf-tools
   :defer t
   :commands (pdf-loader-install)
