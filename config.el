@@ -51,6 +51,9 @@
          (lambda ()
            (display-line-numbers-mode -1)))
 
+(setq confirm-kill-emacs nil)
+
+
 (after! tex
  (setq TeX-auto-save t)
  (setq TeX-parse-self t)
@@ -103,7 +106,7 @@
 "ws" #'split-window-below
 "ww" #'other-window
 "wd" #'delete-window
-"ke" #'kill-emacs)
+"ke" #'save-buffers-kill-terminal)
 
 (after! eyebrowse
  (centaur-tabs-headline-match))
