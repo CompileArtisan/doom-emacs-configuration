@@ -1,0 +1,23 @@
+#+author: Praanesh Balakrishnan Nair
+
+% To use this preamble, include "#+SETUPFILE: /home/praaneshnair/.config/doom/preamble.org" in your org file
+
+
+#+LATEX_HEADER: \usepackage[tmargin=2cm,rmargin=0.5in,lmargin=0.5in,margin=0.85in,bmargin=2cm,footskip=.2in]{geometry}
+
+% Dynamically set title from Org file
+#+LATEX_HEADER: \title{\thetitle}
+
+
+% Dynamically set author from Org file
+#+LATEX_HEADER: \author{\theauthor}
+
+% Set date to current date (or use \thedate for a custom date)
+#+LATEX_HEADER: \date{\today}
+
+
+% Title, TOC on the same page, new page after TOC
+#+LATEX_HEADER: \AtBeginDocument{\maketitle\tableofcontents\newpage}
+
+% Disable Org's automatic TOC generation (because I'm using \tableofcontents by LaTeX)
+#+OPTIONS: toc:nil
