@@ -21,3 +21,32 @@
 
 % Disable Org's automatic TOC generation (because I'm using \tableofcontents by LaTeX)
 #+OPTIONS: toc:nil
+
+% Ensure images scale properly within margins
+#+LATEX_HEADER: \usepackage{graphicx}
+#+LATEX_HEADER: \setkeys{Gin}{width=\linewidth,keepaspectratio}
+
+% Ensure tables don’t overflow
+#+LATEX_HEADER: \usepackage{array}
+#+LATEX_HEADER: \usepackage{longtable}
+#+LATEX_HEADER: \usepackage{booktabs}
+#+LATEX_HEADER: \usepackage{adjustbox}
+
+% Wrap tables automatically if they are too wide
+#+LATEX_HEADER: \usepackage{tabularx}
+#+LATEX_HEADER: \newcolumntype{Y}{>{\centering\arraybackslash}X}
+#+LATEX_HEADER: \renewcommand{\arraystretch}{1.2}
+
+% Float placement settings for tables and figures
+#+LATEX_HEADER: \usepackage{float}
+#+LATEX_HEADER: \restylefloat{table}
+#+LATEX_HEADER: \usepackage{caption}
+#+LATEX_HEADER: \captionsetup{justification=centering, singlelinecheck=false}
+
+% Allow images and tables to be centered within a bounding box
+#+LATEX_HEADER: \usepackage{wrapfig}
+#+LATEX_HEADER: \usepackage{lipsum}
+
+% Allow tables to break across pages
+#+LATEX_HEADER: \usepackage{ltablex}
+#+LATEX_HEADER: \keepXColumns
