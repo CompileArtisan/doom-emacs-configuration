@@ -7,7 +7,7 @@
 (setq doom-theme 'doom-one)
 (setq display-line-numbers-type 'relative)
 (setq org-directory "~/org/")
-
+(setq copilot-mode nil)
 (use-package! minimap
  :config
  (setq minimap-window-location 'right

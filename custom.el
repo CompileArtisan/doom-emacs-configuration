@@ -5,8 +5,6 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    '("88f7ee5594021c60a4a6a1c275614103de8c1435d6d08cc58882f920e0cec65e" default))
- '(org-safe-remote-resources
-   '("\\`file:///home/praaneshnair/OneDrive/Assignments/Semester-4/machine learning/code/Notes\\.org\\'" "\\`file:///home/praaneshnair/OneDrive/Study Material/Semester-4/introduction to design analysis of algorithms DAA/notes/dsa1\\.org\\'"))
  '(package-selected-packages '(org-superstar impatient-mode grip-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
