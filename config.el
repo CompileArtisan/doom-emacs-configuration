@@ -5,6 +5,9 @@
       doom-big-font (font-spec :family "JetBrainsMonoNL Nerd Font" :size 36))
 (setq doom-theme 'doom-one)
 (setq org-latex-listings t)
+(after! org
+  (setq org-latex-src-block-backend 'listings))
+
 (setq display-line-numbers-type 'relative)
 (setq org-directory "~/org/")
 (setq copilot-mode nil)

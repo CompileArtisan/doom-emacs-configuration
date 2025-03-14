@@ -24,3 +24,24 @@
 
 % Specifying images path
 #+LATEX_HEADER: \graphicspath{ {.} }
+
+#+LATEX_HEADER: \usepackage{listings}
+#+LATEX_HEADER: \usepackage{xcolor}
+#+LATEX_HEADER: \lstdefinestyle{customstyle}{
+#+LATEX_HEADER:   language=Java,
+#+LATEX_HEADER:   basicstyle=\ttfamily\small,
+#+LATEX_HEADER:   keywordstyle=\color{blue},
+#+LATEX_HEADER:   commentstyle=\color{gray},
+#+LATEX_HEADER:   stringstyle=\color{red},
+#+LATEX_HEADER:   frame=single,
+#+LATEX_HEADER:   numbers=left,
+#+LATEX_HEADER:   numberstyle=\tiny,
+#+LATEX_HEADER:   tabsize=2,
+#+LATEX_HEADER:   breaklines=true,  % Enables line breaking
+#+LATEX_HEADER:   breakatwhitespace=true,  % Breaks lines at spaces
+#+LATEX_HEADER:   prebreak=\textbackslash,  % Adds "\" at line breaks
+#+LATEX_HEADER:   postbreak=\mbox{\textcolor{red}{$\hookrightarrow$ }}, % Shows arrow at line continuation
+#+LATEX_HEADER:   showspaces=false,  % Hides space markers
+#+LATEX_HEADER:   showstringspaces=false  % Prevents space markers inside strings
+#+LATEX_HEADER: }
+#+LATEX_HEADER: \lstset{style=customstyle}
