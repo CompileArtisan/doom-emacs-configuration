@@ -3,8 +3,8 @@
 (setq doom-font (font-spec :family "JetBrainsMonoNL Nerd Font" :size 20)
       doom-variable-pitch-font (font-spec :family "JetBrainsMonoNL Nerd Font" :size 24)
       doom-big-font (font-spec :family "JetBrainsMonoNL Nerd Font" :size 36))
-
 (setq doom-theme 'doom-one)
+(setq org-latex-listings t)
 (setq display-line-numbers-type 'relative)
 (setq org-directory "~/org/")
 (setq copilot-mode nil)
