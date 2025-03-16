@@ -128,3 +128,9 @@
  (set-face-attribute 'org-level-2 nil :height 1.1 :weight 'normal)
  (set-face-attribute 'org-level-3 nil :height 1.1 :weight 'normal)
  (set-face-attribute 'org-document-title nil :height 1.5 :weight 'bold))
+
+; Open Elfeed with the keybinding `SPC a e`
+(use-package! elfeed)
+(eval-after-load 'elfeed
+  '(map! :leader
+         :desc "Open Elfeed" "e" #'elfeed))

@@ -74,3 +74,4 @@
 (package! latex-preview-pane)
 (package! minimap)
 (package! web-mode)
+(package! elfeed)
