@@ -75,3 +75,4 @@
 (package! minimap)
 (package! web-mode)
 (package! elfeed)
+(package! org-ref)

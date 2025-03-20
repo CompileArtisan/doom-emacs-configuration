@@ -134,3 +134,9 @@
 (eval-after-load 'elfeed
   '(map! :leader
          :desc "Open Elfeed" "e" #'elfeed))
+
+(use-package! org-ref
+  :config
+  (setq org-ref-default-bibliography '("~/path/to/references.bib")
+        org-ref-bibliography-notes "~/path/to/notes.org"
+        org-ref-pdf-directory "~/path/to/pdfs"))
