@@ -27,6 +27,7 @@
 
 #+LATEX_COMPILER: xelatex
 
+% For Code blocks
 #+LATEX_HEADER: \usepackage{fontspec}
 #+LATEX_HEADER: \setmonofont[
 #+LATEX_HEADER:   Path=/home/praaneshnair/.local/share/fonts/,
@@ -53,3 +54,4 @@
 #+LATEX_HEADER:   showstringspaces=false
 #+LATEX_HEADER: }
 #+LATEX_HEADER: \lstset{style=customstyle}
+
