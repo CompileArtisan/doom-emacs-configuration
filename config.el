@@ -4,8 +4,8 @@
 (setq doom-font (font-spec :family "JetBrainsMonoNL Nerd Font" :size 20)
       doom-variable-pitch-font (font-spec :family "JetBrainsMonoNL Nerd Font" :size 24)
       doom-big-font (font-spec :family "JetBrainsMonoNL Nerd Font" :size 36))
-;;(setq doom-theme 'doom-one)
-(setq doom-theme 'catppuccin)
+(setq doom-theme 'doom-one)
+;;(setq doom-theme 'catppuccin)
 (setq org-latex-listings t)
 (after! org
   (setq org-latex-src-block-backend 'listings))
