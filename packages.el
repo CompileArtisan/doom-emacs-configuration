@@ -48,19 +48,9 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;; (unpin! t)
 
-(package! catppuccin-theme)
-
-;; Bufferline
-(package! centaur-tabs)
-
-;; Markdown Preview
-(package! markdown-preview-mode)
 
 ;; Java development
 (package! lsp-java)
-
-;; Table mode (built into markdown-mode)
-(package! markdown-mode)
 
 ;; Indent guides (alternative to scrollbar)
 (package! highlight-indent-guides)

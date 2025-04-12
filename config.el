@@ -108,14 +108,6 @@
 
 (map!
 :leader
-"ff" #'find-file
-"fs" #'save-buffer
-"bb" #'switch-to-buffer
-"bd" #'kill-current-buffer
-"wv" #'split-window-right
-"ws" #'split-window-below
-"ww" #'other-window
-"wd" #'delete-window
 "ke" #'save-buffers-kill-terminal)
 
 (after! eyebrowse
@@ -127,8 +119,6 @@
  (setq treemacs-follow-after-init t)
  (setq treemacs-project-follow-cleanup t)
  (setq treemacs-show-hidden-files t))
-
-(lsp)
 
 (after! org 
  (set-face-attribute 'org-level-1 nil :height 1.1 :weight 'normal)
