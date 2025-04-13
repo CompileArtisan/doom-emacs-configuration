@@ -147,3 +147,15 @@
         (org-latex-export-to-pdf))
 
 (map! :mode 'org :leader "R" #'save-and-export)
+
+
+
+;; function to insert preamble line
+(defun insert-org-setupfile ()
+  "Insert a #+SETUPFILE directive for the Org preamble."
+  (interactive)
+  (insert "#+SETUPFILE: /home/praaneshnair/.config/doom/preamble.org\n"))
+
+(map! :leader
+      :desc "Insert Org SETUPFILE preamble"
+      "o o" #'insert-org-setupfile)
