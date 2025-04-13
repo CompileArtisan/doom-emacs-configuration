@@ -137,3 +137,13 @@
   (setq org-ref-default-bibliography '("~/path/to/references.bib")
         org-ref-bibliography-notes "~/path/to/notes.org"
         org-ref-pdf-directory "~/path/to/pdfs"))
+
+
+;; Adithya's function for me :)
+(defun save-and-export ()
+  "This is just a helper function."
+  (interactive)
+        (save-buffer)
+        (org-latex-export-to-pdf))
+
+(map! :mode 'org :leader "R" #'save-and-export)
