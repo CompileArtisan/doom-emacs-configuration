@@ -159,3 +159,7 @@
 (map! :leader
       :desc "Insert Org SETUPFILE preamble"
       "o o" #'insert-org-setupfile)
+
+
+;; mermaid in org
+(use-package! ob-mermaid)

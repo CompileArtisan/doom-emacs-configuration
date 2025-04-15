@@ -68,3 +68,6 @@
 (package! web-mode)
 (package! elfeed)
 (package! org-ref)
+
+
+(package! ob-mermaid)

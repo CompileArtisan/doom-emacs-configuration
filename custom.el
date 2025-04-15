@@ -39,8 +39,8 @@
       ("\\subsubsection{%s}" . "\\subsubsection*{%s}"))))
  '(org-latex-image-default-width "0.3\\linewidth")
  '(org-safe-remote-resources
-   '("\\`file:///home/praaneshnair/gitprojects/website/src/content/blog/paste-cat\\.org\\'" "\\`file:///home/praaneshnair/OneDrive/Study Material/Semester-4/introduction to design analysis of algorithms DAA/notes/my-notes-on-algorithms\\.org\\'"))
- '(package-selected-packages '(org-ref))
+   '("\\`file:///home/praaneshnair/OneDrive/Assignments/Semester-4/evs/AIE23123-EVS-Assignment\\.org\\'" "\\`file:///home/praaneshnair/OneDrive/Assignments/Semester-4/evs/barun/AIE23135-EVS-Assignment\\.org\\'" "\\`file:///home/praaneshnair/gitprojects/website/src/content/blog/paste-cat\\.org\\'" "\\`file:///home/praaneshnair/OneDrive/Study Material/Semester-4/introduction to design analysis of algorithms DAA/notes/my-notes-on-algorithms\\.org\\'"))
+ '(package-selected-packages '(mermaid-mode elfeed org-ref))
  '(safe-local-variable-values
    '((eval add-to-list 'org-export-before-processing-hook
       (lambda
