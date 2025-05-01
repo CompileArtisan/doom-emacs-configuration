@@ -163,3 +163,23 @@
 
 ;; mermaid in org
 (use-package! ob-mermaid)
+
+
+;; function to insert markdown headers in org
+(defun insert-markdown-template ()
+  "Insert a markdown template with YAML frontmatter and TOC options."
+  (interactive)
+  (insert "#+OPTIONS: toc:nil\n")
+  (insert "#+begin_export markdown\n")
+  (insert "---\n")
+  (insert "title: \"placeholder\"\n")
+  (insert "date: YYYY-MM-DD\n")
+  (insert "description: \"placeholder\"\n")
+  (insert "---\n")
+  (insert "#+end_export\n")
+  (insert "\n")
+  (insert "#+TOC: headlines 2\n"))
+
+(map! :leader
+      :desc "Insert Markdown Template"
+      "o m" #'insert-markdown-template)
