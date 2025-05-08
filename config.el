@@ -183,3 +183,33 @@
 (map! :leader
       :desc "Insert Markdown Template"
       "o m" #'insert-markdown-template)
+
+
+;; function to inesrt ieee template
+(defun insert-ieee-org-template ()
+  "Insert IEEE Org-mode LaTeX export template."
+  (interactive)
+  (insert "#+TITLE: insert title here\n")
+  (insert "#+SETUPFILE: /home/praaneshnair/.config/doom/ieee.org\n")
+  (insert "#+LATEX_HEADER: \\input{/home/praaneshnair/.config/doom/def.tex}\n")
+  (insert "#+LATEX_HEADER: \\input{/home/praaneshnair/.config/doom/author.tex}\n")
+  (insert "#+LATEX_HEADER: \\graphicspath{ {.} }\n")
+  (insert "#+OPTIONS: toc:nil ^:{} author:nil date:nil\n")
+  (insert "#+BIBLIOGRAPHY: References.bib\n")
+  (insert "# #+INCLUDE: abstract.org\n")
+  (insert "#+begin_export latex\n\\begin{abstract}\n#+end_export\n")
+  (insert "insert abstract here\n")
+  (insert "#+begin_export latex\n\\end{abstract}\n#+end_export\n\n")
+  (insert "#+begin_export latex\n\\begin{IEEEkeywords}\n#+end_export\n")
+  (insert "add keywords here\n")
+  (insert "#+begin_export latex\n\\end{IEEEkeywords}\n#+end_export\n\n")
+  (insert "* Introduction\nadd intro here. feel free to make as many org-headings you like\n\n")
+  (insert "* Another org heading\n\n")
+  (insert "#+begin_export latex\n\\begin{figure}[htbp]\n    \\centering\n    \\includegraphics[width=\\columnwidth]{image.png}\n    \\caption{This is how you insert images}\n    \\label{fig:example}\n\\end{figure}\n#+end_export\n\n")
+  (insert "#+begin_export latex\n\\begin{thebibliography}{00}\n#+end_export\n")
+  (insert "\\bibitem{b1} some reference\n")
+  (insert "#+begin_export latex\n\\end{thebibliography}\n#+end_export\n"))
+
+(map! :leader
+      :desc "Insert IEEE Org Template"
+      "o i" #'insert-ieee-org-template)
