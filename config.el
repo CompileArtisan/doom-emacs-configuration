@@ -154,7 +154,7 @@
 (defun insert-org-setupfile ()
   "Insert a #+SETUPFILE directive for the Org preamble."
   (interactive)
-  (insert "#+SETUPFILE: /home/praaneshnair/.config/doom/preamble.org\n"))
+  (insert "#+SETUPFILE: /home/praanesh-nair/.config/doom/preamble.org\n"))
 
 (map! :leader
       :desc "Insert Org SETUPFILE preamble"

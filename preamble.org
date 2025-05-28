@@ -1,6 +1,6 @@
 #+author: Praanesh Balakrishnan Nair
 
-% To use this preamble, include "#+SETUPFILE: /home/praaneshnair/.config/doom/preamble.org" in your org file
+% To use this preamble, include "#+SETUPFILE: /home/praanesh-nair/.config/doom/preamble.org" in your org file
 
 
 #+LATEX_HEADER: \usepackage[tmargin=2cm,rmargin=0.5in,lmargin=0.5in,margin=0.85in,bmargin=2cm,footskip=.2in]{geometry}
