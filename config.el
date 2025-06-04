@@ -164,16 +164,7 @@
 
 ;; mermaid in org
 (use-package! ob-mermaid)
-(add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-tsx-mode))
 
-(use-package! prettier
-  :hook (js-mode . prettier-mode)
-  :hook (web-mode . prettier-mode)
-  :hook (typescript-mode . prettier-mode)
-  :hook (html-mode . prettier-mode)
-  :hook (css-mode . prettier-mode)
-  :config
-  (setq prettier-args '("--single-quote" "--trailing-comma" "es5")))
 
 
 ;; function to insert markdown headers in org
