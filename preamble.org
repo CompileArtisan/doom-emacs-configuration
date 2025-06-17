@@ -33,6 +33,7 @@
 #+LATEX_HEADER:   Path=/home/praaneshnair/.local/share/fonts/,
 #+LATEX_HEADER:   UprightFont=JetBrainsMonoNLNerdFont-Regular.ttf
 #+LATEX_HEADER: ]{JetBrainsMonoNL Nerd Font}
+#+LATEX_HEADER: \newcommand{\code}[1]{\lstinline{#1}}
 
 #+LATEX_HEADER: \usepackage{listings}
 #+LATEX_HEADER: \usepackage{xcolor}  % Ensure colors are available
