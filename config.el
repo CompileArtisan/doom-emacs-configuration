@@ -1,5 +1,16 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
+;; Force focus on new client frames
+(add-hook 'server-after-make-frame-hook
+          (lambda ()
+            (let ((frame (selected-frame)))
+              (raise-frame frame)
+              (select-frame-set-input-focus frame)
+              (when (eq window-system 'x)
+                (x-focus-frame frame))
+              ;; Additional focus stealing for stubborn window managers
+              (set-frame-parameter frame 'fullscreen 'maximized)
+              (set-frame-parameter frame 'fullscreen nil))))
 
 (setq doom-font (font-spec :family "JetBrainsMonoNL Nerd Font" :size 20)
       doom-variable-pitch-font (font-spec :family "JetBrainsMonoNL Nerd Font" :size 24)
