@@ -6,15 +6,10 @@
 (add-hook 'server-after-make-frame-hook
           (lambda ()
             (let ((frame (selected-frame)))
-              (raise-frame frame)
-              (select-frame-set-input-focus frame)
-              (when (eq window-system 'x)
-                (x-focus-frame frame))
-              ;; Extra focus for stubborn WMs
-              (set-frame-parameter frame 'fullscreen 'maximized)
-              (set-frame-parameter frame 'fullscreen nil))))
-
-(remove-hook 'server-after-make-frame-hook #'doom-display-benchmark-h)
+              (when (display-graphic-p frame)
+                (select-frame-set-input-focus frame)
+                (x-focus-frame frame)
+                (set-frame-parameter frame 'fullscreen 'maximized)))))
 
 ;;; --------------------------------------
 ;;; Fonts & Theme
