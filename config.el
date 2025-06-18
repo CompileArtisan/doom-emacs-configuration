@@ -1,27 +1,18 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
-;;; --------------------------------------
-;;; Frame & Focus Management
-;;; --------------------------------------
-(add-hook 'server-after-make-frame-hook
-          (lambda ()
-            (let ((frame (selected-frame)))
-              (when (display-graphic-p frame)
-                (select-frame-set-input-focus frame)
-                (x-focus-frame frame)
-                (set-frame-parameter frame 'fullscreen 'maximized)))))
 
-;;; --------------------------------------
+
+
 ;;; Fonts & Theme
-;;; --------------------------------------
+
 (setq doom-font (font-spec :family "JetBrainsMonoNL Nerd Font" :size 20)
       doom-variable-pitch-font (font-spec :family "JetBrainsMonoNL Nerd Font" :size 24)
       doom-big-font (font-spec :family "JetBrainsMonoNL Nerd Font" :size 36)
       doom-theme 'doom-one) ;; alt: 'catppuccin
 
-;;; --------------------------------------
+
 ;;; Org Mode Config
-;;; --------------------------------------
+
 (setq org-directory "~/org/"
       org-latex-listings t)
 
@@ -38,9 +29,9 @@
           (lambda ()
             (setq org-export-with-broken-links t)))
 
-;;; --------------------------------------
+
 ;;; Org Export Templates & Helpers
-;;; --------------------------------------
+
 
 (defun save-and-export ()
   "Save and export current Org buffer to PDF via LaTeX."
@@ -84,9 +75,9 @@
 (map! :leader "o m" #'insert-markdown-template)
 (map! :leader "o i" #'insert-ieee-org-template)
 
-;;; --------------------------------------
+
 ;;; PDF Tools
-;;; --------------------------------------
+
 (use-package pdf-tools
   :defer t
   :commands (pdf-loader-install)
@@ -103,9 +94,9 @@
 (add-hook 'pdf-view-mode-hook
           (lambda () (display-line-numbers-mode -1)))
 
-;;; --------------------------------------
+
 ;;; AUCTeX & LaTeX Preview
-;;; --------------------------------------
+
 (after! tex
   (setq TeX-auto-save t
         TeX-parse-self t
@@ -141,9 +132,9 @@
     (setq auto-save-timeout 1
           auto-save-interval 1)))
 
-;;; --------------------------------------
+
 ;;; Web Development
-;;; --------------------------------------
+
 (use-package! web-mode
   :mode "\\.html?\\'"
   :config
@@ -160,15 +151,18 @@
         web-mode-code-indent-offset 2
         web-mode-css-indent-offset 2))
 
-;;; --------------------------------------
+
 ;;; UI Tweaks
-;;; --------------------------------------
+
 (setq display-line-numbers-type 'relative
       confirm-kill-emacs nil)
 
-;;; --------------------------------------
+(map!
+ :leader
+ "ke" #'save-buffers-kill-terminal)
+
 ;;; Treemacs & Tabs
-;;; --------------------------------------
+
 (after! treemacs
   (setq treemacs-follow-current-file t
         treemacs-recenter-after-file-follow t
@@ -179,9 +173,9 @@
 (after! eyebrowse
   (centaur-tabs-headline-match))
 
-;;; --------------------------------------
+
 ;;; Elfeed
-;;; --------------------------------------
+
 (use-package! elfeed)
 (eval-after-load 'elfeed
   '(map! :leader :desc "Open Elfeed" "e" #'elfeed))
@@ -192,9 +186,9 @@
         org-ref-bibliography-notes "~/path/to/notes.org"
         org-ref-pdf-directory "~/path/to/pdfs"))
 
-;;; --------------------------------------
+
 ;;; Minimap (Code Overview)
-;;; --------------------------------------
+
 (use-package! minimap
   :config
   (setq minimap-window-location 'right
@@ -205,7 +199,7 @@
   (custom-set-faces!
     '(minimap-active-region-background :background "#000000")))
 
-;;; --------------------------------------
+
 ;;; Org Babel - Mermaid
-;;; --------------------------------------
+
 (use-package! ob-mermaid)
