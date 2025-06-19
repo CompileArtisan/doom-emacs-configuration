@@ -161,6 +161,8 @@
  :leader
  "ke" #'save-buffers-kill-terminal)
 
+(setq fancy-splash-image (concat doom-private-dir "splash.png"))
+
 ;;; Treemacs & Tabs
 
 (after! treemacs
