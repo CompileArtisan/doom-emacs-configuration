@@ -23,7 +23,16 @@
   (set-face-attribute 'org-level-1 nil :height 1.1 :weight 'normal)
   (set-face-attribute 'org-level-2 nil :height 1.1 :weight 'normal)
   (set-face-attribute 'org-level-3 nil :height 1.1 :weight 'normal)
-  (set-face-attribute 'org-document-title nil :height 1.5 :weight 'bold))
+  (set-face-attribute 'org-document-title nil :height 1.5 :weight 'bold)
+  (setq org-latex-text-markup-alist
+        '((bold . "\\textbf{%s}")
+          (code . "\\lstinline{%s}")
+          (italic . "\\emph{%s}")
+          (strike-through . "\\sout{%s}")
+          (underline . "\\uline{%s}")
+          (verbatim . "\\lstinline{%s}"))))
+
+
 
 (add-hook 'org-mode-hook
           (lambda ()
