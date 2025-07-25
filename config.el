@@ -12,6 +12,7 @@
 
 
 ;;; Org Mode Config
+(setq TeX-command-default "xelatex")
 
 (setq org-directory "~/org/"
       org-latex-listings t)
@@ -214,3 +215,6 @@
 ;;; Org Babel - Mermaid
 
 (use-package! ob-mermaid)
+
+;;; vterm
+(setq vterm-shell "/usr/bin/zsh")

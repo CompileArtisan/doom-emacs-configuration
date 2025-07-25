@@ -40,7 +40,9 @@
       ("\\subsubsection{%s}" . "\\subsubsection*{%s}"))))
  '(org-latex-image-default-width "0.3\\linewidth")
  '(org-safe-remote-resources
-   '("\\`file:///home/praanesh-nair/OneDrive/Study Material/Semester-4/introduction to design analysis of algorithms DAA/notes/my-notes-on-algorithms\\.org\\'"
+   '("\\`file:///home/praanesh-nair/gitProjects/org-notes/probabilistic-reasoning/notes\\.org\\'"
+     "\\`file:///home/praanesh-nair/gitProjects/org-notes/formal-language-and-automata/notes\\.org\\'"
+     "\\`file:///home/praanesh-nair/OneDrive/Study Material/Semester-4/introduction to design analysis of algorithms DAA/notes/my-notes-on-algorithms\\.org\\'"
      "\\`file:///home/praaneshnair/OneDrive/Assignments/Semester-4/evs/AIE23123-EVS-Assignment\\.org\\'"
      "\\`file:///home/praaneshnair/OneDrive/Assignments/Semester-4/evs/barun/AIE23135-EVS-Assignment\\.org\\'"
      "\\`file:///home/praaneshnair/gitprojects/website/src/content/blog/paste-cat\\.org\\'"
