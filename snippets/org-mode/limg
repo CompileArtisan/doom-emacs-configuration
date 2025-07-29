@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: LaTeX Image Block
+# key: limg
+# condition: t
+# --
+
+#+begin_export latex
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\columnwidth]{$1}
+    \caption{$2}
+    \label{fig:example$3}
+\end{figure}
+#+end_export
