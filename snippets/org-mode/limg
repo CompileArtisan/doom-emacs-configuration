@@ -7,7 +7,7 @@
 #+begin_export latex
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=\columnwidth]{$1}
+    \includegraphics[width=8cm]{$1}
     \caption{$2}
     \label{fig:example$3}
 \end{figure}
