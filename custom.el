@@ -14,8 +14,7 @@
      "http://theverge.com/rss/index.xml"
      "https://compileartisan.pages.dev/rss.xml"
      "https://adithyanair.com/rss.xml"))
- '(org-agenda-files
-   '("~/OneDrive/Study Material/Semester-4/introduction to design analysis of algorithms DAA/notes/dsa1.org"))
+ '(org-agenda-files '("~/Documents/events.org"))
  '(org-html-head-extra "")
  '(org-latex-classes
    '(("IEEEtran" "\\documentclass[conference]{IEEEtran}"
@@ -47,7 +46,7 @@
      "\\`file:///home/praaneshnair/OneDrive/Assignments/Semester-4/evs/barun/AIE23135-EVS-Assignment\\.org\\'"
      "\\`file:///home/praaneshnair/gitprojects/website/src/content/blog/paste-cat\\.org\\'"
      "\\`file:///home/praaneshnair/OneDrive/Study Material/Semester-4/introduction to design analysis of algorithms DAA/notes/my-notes-on-algorithms\\.org\\'"))
- '(package-selected-packages '(mermaid-mode elfeed org-ref))
+ '(package-selected-packages '(csv-mode elfeed mermaid-mode org-ref))
  '(safe-local-variable-values
    '((eval add-to-list 'org-export-before-processing-hook
       (lambda (be) (org-babel-tangle)))
