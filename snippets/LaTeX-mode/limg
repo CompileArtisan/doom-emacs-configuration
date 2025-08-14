@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: limg
+# uuid: limg
+# key: limg
+# condition: t
+# --
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=8cm]{$1}
+    \caption{$2}
+    \label{fig:$3}
+\end{figure}

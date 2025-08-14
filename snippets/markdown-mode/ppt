@@ -1,0 +1,41 @@
+# -*- mode: snippet -*-
+# name: ppt
+# uuid: ppt
+# key: ppt
+# condition: t
+# --
+
+---
+marp: true
+style: |
+  :root {
+    --color-background: #fff;
+    --color-foreground: #333;
+    --color-highlight: #f96;
+    --color-dimmed: #888;
+  }
+
+  section {
+    background-color: var(--color-background);
+    font-family: Arial, sans-serif;
+  }
+
+  h1, h2, h3 {
+    color: var(--color-foreground);
+  }
+
+  h1 {
+    font-size: 3em;
+  }
+
+  h2 {
+    font-size: 2.5em;
+  }
+
+---
+
+# Title
+
+$0
+
+---

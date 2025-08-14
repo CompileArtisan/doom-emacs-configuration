@@ -1,0 +1,109 @@
+# -*- mode: snippet -*-
+# name: ieee
+# uuid: ieee
+# key: ieee
+# condition: t
+# --
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{listings}[breaklines=true]
+\lstset{
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
+  basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  firstnumber=1000,                % start line enumeration with line 1000
+  frame=single,	                   % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  language=Octave,                 % the language of the code
+  morekeywords={*,...},            % if you want to add more keywords to the set
+  numbers=none,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{gray},   % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mymauve},     % string literal style
+  tabsize=2
+}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+
+\title{$1}
+
+\author{
+    \IEEEauthorblockN{Praanesh Balakrishnan Nair}
+    \IEEEauthorblockA{
+        \textit{Dept. of Computer Science}\\\\
+        \textit{and Engineering}\\\\
+        \textit{Amrita School of Computing}\\\\
+        \textit{Amrita Vishwa Vidyapeetham}\\\\
+        Bengaluru, India\\\\
+        bl.en.u4aie23123@bl.students.amrita.edu
+    }
+    \and
+    \IEEEauthorblockN{Varun Adhitya G B}
+    \IEEEauthorblockA{
+        \textit{Dept. of Computer Science}\\\\
+        \textit{and Engineering}\\\\
+        \textit{Amrita School of Computing}\\\\
+        \textit{Amrita Vishwa Vidyapeetham}\\\\
+        Bengaluru, India\\\\
+        bl.en.u4aie23135@bl.students.amrita.edu
+    }
+    \and
+    \IEEEauthorblockN{Sanjushree Rajan}
+    \IEEEauthorblockA{
+        \textit{Dept. of Computer Science}\\\\
+        \textit{and Engineering}\\\\
+        \textit{Amrita School of Computing}\\\\
+        \textit{Amrita Vishwa Vidyapeetham}\\\\
+        Bengaluru, India\\\\
+        bl.en.u4aie23130@bl.students.amrita.edu
+    }
+}
+
+\maketitle
+
+\begin{abstract}
+$2
+\end{abstract}
+
+\begin{IEEEkeywords}
+$3
+\end{IEEEkeywords}
+
+\section{Introduction}
+This document is a model and instructions for \LaTeX.
+Please observe the conference page limits.
+
+
+\section*{Acknowledgment}
+
+The preferred spelling of the word ``acknowledgment'' in America is without
+an ``e'' after the ``g''. Avoid the stilted expression ``one of us (R. B.
+G.) thanks $\ldots$''. Instead, try ``R. B. G. thanks$\ldots$''. Put sponsor
+acknowledgments in the unnumbered footnote on the first page.
+
+
+\begin{thebibliography}{00}
+\bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
+\end{thebibliography}
+
+\end{document}
