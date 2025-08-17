@@ -16,6 +16,7 @@
 \usepackage{lmodern}
 \usepackage{titling}
 \usepackage{graphicx}
+\usepackage{amsmath}
 
 \setlength{\parskip}{1em}
 \setlength{\parindent}{0pt}
