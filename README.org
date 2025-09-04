@@ -1,2 +1,3 @@
-* My Doom Emacs Configuration
-This is my Doom Emacs Configuration files. It's not very customized, but it meets my needs 😌
+* These are my [[https://img.shields.io/badge/Doom-%237F5AB6.svg?&style=for-the-badge&logo=doom&logoColor=white]] [[https://img.shields.io/badge/Emacs-%237F5AB6.svg?&style=for-the-badge&logo=gnu-emacs&logoColor=white]] configuration files.
+
+
