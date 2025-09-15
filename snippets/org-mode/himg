@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: himg
+# uuid: himg
+# key: himg
+# condition: t
+# --
+
+#+begin_export html
+<img src="$1" alt="$2">
+#+end_export
+
+$3

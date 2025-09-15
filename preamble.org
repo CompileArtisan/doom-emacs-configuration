@@ -56,3 +56,78 @@
 #+LATEX_HEADER: }
 #+LATEX_HEADER: \lstset{style=customstyle}
 
+% HTML Export Settings
+#+OPTIONS: html-postamble:nil  % Disable footer (you can customize this later if needed)
+#+OPTIONS: html-preamble:nil   % Disable default preamble
+#+OPTIONS: html5:t            % Enable HTML5 output
+#+OPTIONS: toc: headlines    % Create table of contents with headline links
+
+% Custom HTML header
+#+HTML_HEAD: <meta charset="UTF-8">
+#+HTML_HEAD: <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+#+HTML_HEAD: <style>
+#+HTML_HEAD: /* General styles */
+#+HTML_HEAD: body {
+#+HTML_HEAD:   font-family: 'Arial', sans-serif;
+#+HTML_HEAD:   line-height: 1.6;
+#+HTML_HEAD:   margin: 0;
+#+HTML_HEAD:   padding: 0;
+#+HTML_HEAD:   background-color: #f4f4f4;
+#+HTML_HEAD: }
+#+HTML_HEAD: header, footer {
+#+HTML_HEAD:   background-color: #333;
+#+HTML_HEAD:   color: white;
+#+HTML_HEAD:   text-align: center;
+#+HTML_HEAD:   padding: 1em 0;
+#+HTML_HEAD: }
+#+HTML_HEAD: h1, h2, h3 {
+#+HTML_HEAD:   font-family: 'Helvetica', sans-serif;
+#+HTML_HEAD: }
+#+HTML_HEAD: pre {
+#+HTML_HEAD:   background-color: #333;
+#+HTML_HEAD:   color: white;
+#+HTML_HEAD:   padding: 10px;
+#+HTML_HEAD:   overflow-x: auto;
+#+HTML_HEAD:   white-space: pre-wrap;
+#+HTML_HEAD:   word-wrap: break-word;
+#+HTML_HEAD: }
+#+HTML_HEAD: /* Styling code blocks */
+#+HTML_HEAD: .codeblock {
+#+HTML_HEAD:   font-family: 'Courier New', monospace;
+#+HTML_HEAD:   background-color: #222;
+#+HTML_HEAD:   color: white;
+#+HTML_HEAD:   padding: 15px;
+#+HTML_HEAD:   border-radius: 5px;
+#+HTML_HEAD: }
+#+HTML_HEAD: img {
+#+HTML_HEAD:      max-width: 100%;      /* Ensure images don't overflow the screen */
+#+HTML_HEAD:      height: auto;         /* Maintain aspect ratio */
+#+HTML_HEAD:      display: block;       /* Remove any extra space below images */
+#+HTML_HEAD:      margin: 0 auto;       /* Center images */
+#+HTML_HEAD: }
+#+HTML_HEAD: /* Responsive Design */
+#+HTML_HEAD: @media screen and (max-width: 768px) {
+#+HTML_HEAD:   body {
+#+HTML_HEAD:     font-size: 14px;
+#+HTML_HEAD:     padding: 10px;
+#+HTML_HEAD:   }
+#+HTML_HEAD:   h1 {
+#+HTML_HEAD:     font-size: 1.5em;
+#+HTML_HEAD:   }
+#+HTML_HEAD:   pre {
+#+HTML_HEAD:     font-size: 0.85em;
+#+HTML_HEAD:   }
+#+HTML_HEAD: }
+#+HTML_HEAD: @media screen and (max-width: 480px) {
+#+HTML_HEAD:   body {
+#+HTML_HEAD:     font-size: 12px;
+#+HTML_HEAD:     padding: 5px;
+#+HTML_HEAD:   }
+#+HTML_HEAD:   h1 {
+#+HTML_HEAD:     font-size: 1.3em;
+#+HTML_HEAD:   }
+#+HTML_HEAD:   pre {
+#+HTML_HEAD:     font-size: 0.75em;
+#+HTML_HEAD:   }
+#+HTML_HEAD: }
+#+HTML_HEAD: </style>
