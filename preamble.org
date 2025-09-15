@@ -8,13 +8,11 @@
 % Dynamically set title from Org file
 #+LATEX_HEADER: \title{\thetitle}
 
-
 % Dynamically set author from Org file
 #+LATEX_HEADER: \author{\theauthor}
 
 % Set date to current date (or use \thedate for a custom date)
 #+LATEX_HEADER: \date{\today}
-
 
 % Title, TOC on the same page, new page after TOC
 #+LATEX_HEADER: \AtBeginDocument{\maketitle\tableofcontents\newpage}
@@ -24,7 +22,6 @@
 
 % Specifying images path
 #+LATEX_HEADER: \graphicspath{ {.} }
-
 #+LATEX_COMPILER: xelatex
 
 % For Code blocks
@@ -34,7 +31,6 @@
 #+LATEX_HEADER:   UprightFont=JetBrainsMonoNLNerdFont-Regular.ttf
 #+LATEX_HEADER: ]{JetBrainsMonoNL Nerd Font}
 #+LATEX_HEADER: \newcommand{\code}[1]{\lstinline{#1}}
-
 #+LATEX_HEADER: \usepackage{listings}
 #+LATEX_HEADER: \usepackage{xcolor}  % Ensure colors are available
 #+LATEX_HEADER: \lstdefinestyle{customstyle}{
@@ -57,10 +53,10 @@
 #+LATEX_HEADER: \lstset{style=customstyle}
 
 % HTML Export Settings
-#+OPTIONS: html-postamble:nil  % Disable footer (you can customize this later if needed)
-#+OPTIONS: html-preamble:nil   % Disable default preamble
-#+OPTIONS: html5:t            % Enable HTML5 output
-#+OPTIONS: toc: headlines    % Create table of contents with headline links
+#+OPTIONS: html-postamble:nil
+#+OPTIONS: html-preamble:nil
+#+OPTIONS: html5:t
+#+OPTIONS: toc: headlines
 
 % Custom HTML header
 #+HTML_HEAD: <meta charset="UTF-8">
@@ -73,12 +69,6 @@
 #+HTML_HEAD:   margin: 0;
 #+HTML_HEAD:   padding: 0;
 #+HTML_HEAD:   background-color: #f4f4f4;
-#+HTML_HEAD: }
-#+HTML_HEAD: header, footer {
-#+HTML_HEAD:   background-color: #333;
-#+HTML_HEAD:   color: white;
-#+HTML_HEAD:   text-align: center;
-#+HTML_HEAD:   padding: 1em 0;
 #+HTML_HEAD: }
 #+HTML_HEAD: h1, h2, h3 {
 #+HTML_HEAD:   font-family: 'Helvetica', sans-serif;
@@ -130,4 +120,38 @@
 #+HTML_HEAD:     font-size: 0.75em;
 #+HTML_HEAD:   }
 #+HTML_HEAD: }
+#+HTML_HEAD:
+#+HTML_HEAD: .header {
+#+HTML_HEAD: text-align: center;
+#+HTML_HEAD: margin: 0px;
+#+HTML_HEAD: background-color: #0000aa;
+#+HTML_HEAD: color: #ffffff;
+#+HTML_HEAD: padding: 0px;
+#+HTML_HEAD: flex-shrink: 0;
+#+HTML_HEAD: word-wrap: break-word;
+#+HTML_HEAD:   font-family: DOSVGA, monospace;
+#+HTML_HEAD: }
+#+HTML_HEAD:
+#+HTML_HEAD: .header a {
+#+HTML_HEAD: color: #ffffff;
+#+HTML_HEAD: text-decoration: none;
+#+HTML_HEAD: font-size: 2.04em;
+#+HTML_HEAD: white-space: nowrap;
+#+HTML_HEAD: transition: all 0.3s ease;
+#+HTML_HEAD: padding: 0px;
+#+HTML_HEAD: }
+#+HTML_HEAD:
+#+HTML_HEAD: .header a:hover {
+#+HTML_HEAD: color: #bababa;
+#+HTML_HEAD: }
+#+HTML_HEAD:
+#+HTML_HEAD:
+#+HTML_HEAD: @font-face {
+#+HTML_HEAD:   font-family: DOSVGA;
+#+HTML_HEAD:   src: url('/home/praanesh-nair/.config/doom/Perfect%20DOS%20VGA%20437%20Win.ttf') format('truetype');
+#+HTML_HEAD: }
+
 #+HTML_HEAD: </style>
+#+HTML_HEAD: <div class="header">
+#+HTML_HEAD: <a href="https://compileartisan.pages.dev/">CompileArtisan</a>
+#+HTML_HEAD: </div>
