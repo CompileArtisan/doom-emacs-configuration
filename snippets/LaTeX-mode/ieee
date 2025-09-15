@@ -10,6 +10,7 @@
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{algorithmic}
+\usepackage{float}
 \usepackage{listings}[breaklines=true]
 \lstset{
   backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
@@ -89,7 +90,9 @@ $2
 $3
 \end{IEEEkeywords}
 
-\section{Introduction}
+\section{Introduction}%
+\label{sec:intro}
+
 This document is a model and instructions for \LaTeX.
 Please observe the conference page limits.
 

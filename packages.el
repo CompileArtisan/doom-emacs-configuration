@@ -71,3 +71,6 @@
 
 
 (package! ob-mermaid)
+
+;; Catpuccin
+(package! catppuccin-theme)

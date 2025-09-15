@@ -9,7 +9,9 @@
    '("0325a6b5eea7e5febae709dab35ec8648908af12cf2d2b569bedc8da0a3a81c1"
      "88f7ee5594021c60a4a6a1c275614103de8c1435d6d08cc58882f920e0cec65e" default))
  '(elfeed-feeds
-   '("https://overreacted.io/rss.xml" "https://www.freecodecamp.org/news/rss/"
+   '("https://heftymouse.me/blog/rss.xml"
+     "https://links.atlasdev.club/feeds/shared" "https://overreacted.io/rss.xml"
+     "https://www.freecodecamp.org/news/rss/"
      "https://www.team-bhp.com/forum/external.php?type=rss2"
      "http://theverge.com/rss/index.xml"
      "https://compileartisan.pages.dev/rss.xml"

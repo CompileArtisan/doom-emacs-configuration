@@ -5,9 +5,9 @@
 
 ;;; Fonts & Theme
 
-(setq doom-font (font-spec :family "JetBrainsMonoNL Nerd Font" :size 20)
-      doom-variable-pitch-font (font-spec :family "JetBrainsMonoNL Nerd Font" :size 24)
-      doom-big-font (font-spec :family "JetBrainsMonoNL Nerd Font" :size 36)
+(setq doom-font (font-spec :family "JetBrainsMonoNL Nerd Font" :size 18)
+      doom-variable-pitch-font (font-spec :family "JetBrainsMonoNL Nerd Font" :size 22)
+      doom-big-font (font-spec :family "JetBrainsMonoNL Nerd Font" :size 34)
       doom-theme 'doom-one) ;; alt: 'catppuccin
 
 
