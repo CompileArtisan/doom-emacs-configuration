@@ -56,7 +56,6 @@
 #+OPTIONS: html-postamble:nil
 #+OPTIONS: html-preamble:nil
 #+OPTIONS: html5:t
-#+OPTIONS: toc: headlines
 
 % Custom HTML header
 #+HTML_HEAD: <meta charset="UTF-8">

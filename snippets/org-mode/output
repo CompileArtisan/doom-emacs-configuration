@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: output
+# uuid: output
+# key: output
+# condition: t
+# --
+:results output raw :wrap src :exports both
+$0

@@ -216,6 +216,10 @@
 
 (use-package! ob-mermaid)
 
+;;; Org Agenda
+(setq org-agenda-span 45)
+
+
 ;;; vterm
 (setq vterm-shell "/usr/bin/zsh")
 
