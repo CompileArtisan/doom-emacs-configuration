@@ -18,7 +18,7 @@
 #+LATEX_HEADER: \AtBeginDocument{\maketitle\tableofcontents\newpage}
 
 % Disable Org's automatic TOC generation (because I'm using \tableofcontents by LaTeX)
-#+OPTIONS: toc:nil
+#+OPTIONS: toc:3
 
 % Specifying images path
 #+LATEX_HEADER: \graphicspath{ {.} }
