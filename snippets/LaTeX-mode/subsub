@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: subsub
+# uuid: subsub
+# key: subsub
+# condition: t
+# --
+
+\subsubsection{$1}%
+\label{subsubsec:$2}
+
+$3

@@ -1,6 +1,6 @@
 #+author: Praanesh Balakrishnan Nair
 
-% To use this preamble, include "#+SETUPFILE: /home/praanesh-nair/.config/doom/preamble.org" in your org file
+% To use this preamble, include "#+SETUPFILE: /home/praaneshnair/.config/doom/preamble.org" in your org file
 
 
 #+LATEX_HEADER: \usepackage[tmargin=2cm,rmargin=0.5in,lmargin=0.5in,margin=0.85in,bmargin=2cm,footskip=.2in]{geometry}
@@ -27,7 +27,7 @@
 % For Code blocks
 #+LATEX_HEADER: \usepackage{fontspec}
 #+LATEX_HEADER: \setmonofont[
-#+LATEX_HEADER:   Path=/home/praanesh-nair/.local/share/fonts/,
+#+LATEX_HEADER:   Path=/home/praaneshnair/.local/share/fonts/,
 #+LATEX_HEADER:   UprightFont=JetBrainsMonoNLNerdFont-Regular.ttf
 #+LATEX_HEADER: ]{JetBrainsMonoNL Nerd Font}
 #+LATEX_HEADER: \newcommand{\code}[1]{\lstinline{#1}}
@@ -147,7 +147,7 @@
 #+HTML_HEAD:
 #+HTML_HEAD: @font-face {
 #+HTML_HEAD:   font-family: DOSVGA;
-#+HTML_HEAD:   src: url('/home/praanesh-nair/.config/doom/Perfect%20DOS%20VGA%20437%20Win.ttf') format('truetype');
+#+HTML_HEAD:   src: url('/home/praaneshnair/.config/doom/Perfect%20DOS%20VGA%20437%20Win.ttf') format('truetype');
 #+HTML_HEAD: }
 
 #+HTML_HEAD: </style>

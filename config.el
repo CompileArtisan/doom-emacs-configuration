@@ -52,7 +52,7 @@
 (defun insert-org-setupfile ()
   "Insert SETUPFILE directive."
   (interactive)
-  (insert "#+SETUPFILE: /home/praanesh-nair/.config/doom/preamble.org\n"))
+  (insert "#+SETUPFILE: /home/praaneshnair/.config/doom/preamble.org\n"))
 
 (defun insert-markdown-template ()
   "Insert YAML + Markdown structure for Org export."
@@ -65,9 +65,9 @@
   "Insert IEEE-compliant Org export template."
   (interactive)
   (insert "#+TITLE: insert title here\n")
-  (insert "#+SETUPFILE: /home/praanesh-nair/.config/doom/ieee.org\n")
-  (insert "#+LATEX_HEADER: \\input{/home/praanesh-nair/.config/doom/def.tex}\n")
-  (insert "#+LATEX_HEADER: \\input{/home/praanesh-nair/.config/doom/author.tex}\n")
+  (insert "#+SETUPFILE: /home/praaneshnair/.config/doom/ieee.org\n")
+  (insert "#+LATEX_HEADER: \\input{/home/praaneshnair/.config/doom/def.tex}\n")
+  (insert "#+LATEX_HEADER: \\input{/home/praaneshnair/.config/doom/author.tex}\n")
   (insert "#+LATEX_HEADER: \\graphicspath{ {.} }\n")
   (insert "#+OPTIONS: toc:nil ^:{} author:nil date:nil\n")
   (insert "#+BIBLIOGRAPHY: References.bib\n")

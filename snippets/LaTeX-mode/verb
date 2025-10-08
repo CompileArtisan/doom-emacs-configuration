@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: verb
+# uuid: verb
+# key: verb
+# condition: t
+# --
+\begin{verb}|$1|\end{verb}$2
