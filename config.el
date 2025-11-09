@@ -105,7 +105,7 @@
           (lambda () (display-line-numbers-mode -1)))
 
 
-;;; AUCTeX & LaTeX Preview
+;;; AUCTeX & LaTeX 
 
 (after! tex
   (setq TeX-auto-save t
@@ -141,6 +141,11 @@
     (auto-save-mode +1)
     (setq auto-save-timeout 1
           auto-save-interval 1)))
+
+(map! :leader
+      :desc "Export region to LaTeX" 
+      "L" #'org-export-region-to-latex)
+
 
 
 ;;; Web Development

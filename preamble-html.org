@@ -1,57 +1,3 @@
-#+author: Praanesh Balakrishnan Nair
-
-% To use this preamble, include "#+SETUPFILE: /home/praaneshnair/.config/doom/preamble.org" in your org file
-
-
-#+LATEX_HEADER: \usepackage[tmargin=2cm,rmargin=0.5in,lmargin=0.5in,margin=0.85in,bmargin=2cm,footskip=.2in]{geometry}
-
-% Dynamically set title from Org file
-#+LATEX_HEADER: \title{\thetitle}
-
-% Dynamically set author from Org file
-#+LATEX_HEADER: \author{\theauthor}
-
-% Set date to current date (or use \thedate for a custom date)
-#+LATEX_HEADER: \date{\today}
-
-% Title, TOC on the same page, new page after TOC
-#+LATEX_HEADER: \AtBeginDocument{\maketitle\tableofcontents\newpage}
-
-% Disable Org's automatic TOC generation (because I'm using \tableofcontents by LaTeX)
-#+OPTIONS: toc:3
-
-% Specifying images path
-#+LATEX_HEADER: \graphicspath{ {.} }
-#+LATEX_COMPILER: xelatex
-
-% For Code blocks
-#+LATEX_HEADER: \usepackage{fontspec}
-#+LATEX_HEADER: \setmonofont[
-#+LATEX_HEADER:   Path=/home/praaneshnair/.local/share/fonts/,
-#+LATEX_HEADER:   UprightFont=JetBrainsMonoNLNerdFont-Regular.ttf
-#+LATEX_HEADER: ]{JetBrainsMonoNL Nerd Font}
-#+LATEX_HEADER: \newcommand{\code}[1]{\lstinline{#1}}
-#+LATEX_HEADER: \usepackage{listings}
-#+LATEX_HEADER: \usepackage{xcolor}  % Ensure colors are available
-#+LATEX_HEADER: \lstdefinestyle{customstyle}{
-#+LATEX_HEADER:   language=Java,
-#+LATEX_HEADER:   basicstyle=\ttfamily\small\fontspec{JetBrainsMonoNL Nerd Font},
-#+LATEX_HEADER:   keywordstyle=\color{blue},    % Proper syntax for blue keywords
-#+LATEX_HEADER:   commentstyle=\color{gray},    % Proper syntax for gray comments
-#+LATEX_HEADER:   stringstyle=\color{red},      % Proper syntax for red strings
-#+LATEX_HEADER:   frame=single,
-#+LATEX_HEADER:   numbers=left,
-#+LATEX_HEADER:   numberstyle=\tiny,
-#+LATEX_HEADER:   tabsize=2,
-#+LATEX_HEADER:   breaklines=true,
-#+LATEX_HEADER:   breakatwhitespace=true,
-#+LATEX_HEADER:   prebreak=\textbackslash,
-#+LATEX_HEADER:   postbreak=\mbox{\textcolor{red}{$\hookrightarrow$ }},
-#+LATEX_HEADER:   showspaces=false,
-#+LATEX_HEADER:   showstringspaces=false
-#+LATEX_HEADER: }
-#+LATEX_HEADER: \lstset{style=customstyle}
-
 % HTML Export Settings
 #+OPTIONS: html-postamble:nil
 #+OPTIONS: html-preamble:nil
@@ -147,10 +93,11 @@
 #+HTML_HEAD:
 #+HTML_HEAD: @font-face {
 #+HTML_HEAD:   font-family: DOSVGA;
-#+HTML_HEAD:   src: url('/home/praaneshnair/.config/doom/Perfect%20DOS%20VGA%20437%20Win.ttf') format('truetype');
+#+HTML_HEAD:   src: url('/home/praaneshnair/.config/doom/perfect-dos-vga-437-win.ttf') format('truetype');
 #+HTML_HEAD: }
 
 #+HTML_HEAD: </style>
 #+HTML_HEAD: <div class="header">
 #+HTML_HEAD: <a href="https://compileartisan.pages.dev/">CompileArtisan</a>
 #+HTML_HEAD: </div>
+

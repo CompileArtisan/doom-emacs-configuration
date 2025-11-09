@@ -3,6 +3,7 @@
 # uuid: ppt
 # key: ppt
 # condition: t
+# expand-env: ((yas-indent-line 'fixed))
 # --
 
 ---
