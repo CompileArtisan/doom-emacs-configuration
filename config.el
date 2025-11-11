@@ -231,3 +231,14 @@
 
 ;;; dired
 (add-hook 'dired-mode-hook 'display-line-numbers-mode)
+
+
+(defun my/dired-convert-to-pdf ()
+  "Convert the selected .pptx file to PDF using LibreOffice."
+  (interactive)
+  (let ((file (dired-get-file-for-visit)))  ;; Get the current file in dired
+    (when (and file (string-equal (file-name-extension file) "pptx"))
+      (shell-command (format "libreoffice --headless --convert-to pdf --outdir . %s" (shell-quote-argument file)))
+      (message "Converted %s to PDF!" file))))
+(map! :leader
+      :desc "Convert .pptx to PDF" :n "c" #'my/dired-convert-to-pdf)

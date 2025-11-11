@@ -22,6 +22,35 @@
 \setlength{\parindent}{0pt}
 \renewcommand{\baselinestretch}{1.0}
 
+
+\usepackage{listings}[breaklines=true]
+\usepackage{xcolor}
+\definecolor{codegray}{gray}{0.9}
+\definecolor{commentgreen}{RGB}{34,139,34}
+\definecolor{stringpurple}{RGB}{160,32,240}
+\definecolor{keywordblue}{RGB}{0,0,180}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{codegray},   
+    commentstyle=\color{commentgreen}\itshape,
+    keywordstyle=\color{keywordblue}\bfseries,
+    stringstyle=\color{stringpurple},
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    frame=single,
+    rulecolor=\color{gray},
+    frameround=tttt,
+    tabsize=2,
+    captionpos=b
+}
+
+\lstset{style=mystyle}
+
 \titleformat{\section}{\bfseries\large}{\thesection.}{1em}{}
 \pagestyle{fancy}
 \fancyhf{}
