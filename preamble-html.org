@@ -2,7 +2,6 @@
 #+OPTIONS: html-postamble:nil
 #+OPTIONS: html-preamble:nil
 #+OPTIONS: html5:t
-
 % Custom HTML header
 #+HTML_HEAD: <meta charset="UTF-8">
 #+HTML_HEAD: <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -14,6 +13,11 @@
 #+HTML_HEAD:   margin: 0;
 #+HTML_HEAD:   padding: 0;
 #+HTML_HEAD:   background-color: #f4f4f4;
+#+HTML_HEAD: }
+#+HTML_HEAD:
+#+HTML_HEAD: #postamble, #preamble {
+#+HTML_HEAD:   margin-left: 280px;
+#+HTML_HEAD:   padding: 20px 40px;
 #+HTML_HEAD: }
 #+HTML_HEAD: h1, h2, h3 {
 #+HTML_HEAD:   font-family: 'Helvetica', sans-serif;
@@ -35,13 +39,124 @@
 #+HTML_HEAD:   border-radius: 5px;
 #+HTML_HEAD: }
 #+HTML_HEAD: img {
-#+HTML_HEAD:      max-width: 100%;      /* Ensure images don't overflow the screen */
-#+HTML_HEAD:      height: auto;         /* Maintain aspect ratio */
-#+HTML_HEAD:      display: block;       /* Remove any extra space below images */
-#+HTML_HEAD:      margin: 0 auto;       /* Center images */
+#+HTML_HEAD:      max-width: 100%;
+#+HTML_HEAD:      height: auto;
+#+HTML_HEAD:      display: block;
+#+HTML_HEAD:      margin: 0 auto;
 #+HTML_HEAD: }
+#+HTML_HEAD:
+#+HTML_HEAD: .header {
+#+HTML_HEAD: text-align: center;
+#+HTML_HEAD: margin: 0px;
+#+HTML_HEAD: background-color: #0000aa;
+#+HTML_HEAD: color: #ffffff;
+#+HTML_HEAD: padding: 5px 0;
+#+HTML_HEAD: flex-shrink: 0;
+#+HTML_HEAD: word-wrap: break-word;
+#+HTML_HEAD: font-family: DOSVGA, monospace;
+#+HTML_HEAD: position: fixed;
+#+HTML_HEAD: top: 0;
+#+HTML_HEAD: left: 0;
+#+HTML_HEAD: right: 0;
+#+HTML_HEAD: z-index: 1000;
+#+HTML_HEAD: box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+#+HTML_HEAD: }
+#+HTML_HEAD:
+#+HTML_HEAD: .header a {
+#+HTML_HEAD: color: #ffffff;
+#+HTML_HEAD: text-decoration: none;
+#+HTML_HEAD: font-size: 1.5em;
+#+HTML_HEAD: white-space: nowrap;
+#+HTML_HEAD: transition: all 0.3s ease;
+#+HTML_HEAD: padding: 0px;
+#+HTML_HEAD: }
+#+HTML_HEAD:
+#+HTML_HEAD: .header a:hover {
+#+HTML_HEAD: color: #bababa;
+#+HTML_HEAD: }
+#+HTML_HEAD:
+#+HTML_HEAD: @font-face {
+#+HTML_HEAD:   font-family: DOSVGA;
+#+HTML_HEAD:   src: url('/home/praaneshnair/.config/doom/perfect-dos-vga-437-win.ttf') format('truetype');
+#+HTML_HEAD: }
+#+HTML_HEAD:
+#+HTML_HEAD: /* Table of Contents Sidebar */
+#+HTML_HEAD: #table-of-contents {
+#+HTML_HEAD:   position: fixed;
+#+HTML_HEAD:   left: 0;
+#+HTML_HEAD:   top: 45px;
+#+HTML_HEAD:   width: 280px;
+#+HTML_HEAD:   height: calc(100vh - 45px);
+#+HTML_HEAD:   overflow-y: auto;
+#+HTML_HEAD:   background-color: #f8f8f8;
+#+HTML_HEAD:   border-right: 1px solid #ddd;
+#+HTML_HEAD:   padding: 30px 20px;
+#+HTML_HEAD:   box-sizing: border-box;
+#+HTML_HEAD:   z-index: 10;
+#+HTML_HEAD: }
+#+HTML_HEAD:
+#+HTML_HEAD: #table-of-contents h2 {
+#+HTML_HEAD:   margin-top: 0;
+#+HTML_HEAD:   color: #0000aa;
+#+HTML_HEAD:   font-size: 1.1em;
+#+HTML_HEAD:   border-bottom: 1px solid #ddd;
+#+HTML_HEAD:   padding-bottom: 10px;
+#+HTML_HEAD:   margin-bottom: 15px;
+#+HTML_HEAD: }
+#+HTML_HEAD:
+#+HTML_HEAD: #table-of-contents ul {
+#+HTML_HEAD:   list-style-type: none;
+#+HTML_HEAD:   padding-left: 0;
+#+HTML_HEAD:   margin: 0;
+#+HTML_HEAD: }
+#+HTML_HEAD:
+#+HTML_HEAD: #table-of-contents ul ul {
+#+HTML_HEAD:   padding-left: 15px;
+#+HTML_HEAD:   margin-top: 5px;
+#+HTML_HEAD: }
+#+HTML_HEAD:
+#+HTML_HEAD: #table-of-contents li {
+#+HTML_HEAD:   margin: 8px 0;
+#+HTML_HEAD: }
+#+HTML_HEAD:
+#+HTML_HEAD: #table-of-contents a {
+#+HTML_HEAD:   color: #555;
+#+HTML_HEAD:   text-decoration: none;
+#+HTML_HEAD:   display: block;
+#+HTML_HEAD:   padding: 5px 10px;
+#+HTML_HEAD:   border-radius: 4px;
+#+HTML_HEAD:   transition: all 0.2s ease;
+#+HTML_HEAD:   font-size: 0.95em;
+#+HTML_HEAD: }
+#+HTML_HEAD:
+#+HTML_HEAD: #table-of-contents a:hover {
+#+HTML_HEAD:   color: #0000aa;
+#+HTML_HEAD:   background-color: #e8e8ff;
+#+HTML_HEAD: }
+#+HTML_HEAD:
+#+HTML_HEAD: /* Main content area */
+#+HTML_HEAD: #content {
+#+HTML_HEAD:   margin-left: 280px;
+#+HTML_HEAD:   margin-top: 45px;
+#+HTML_HEAD:   padding: 40px;
+#+HTML_HEAD:   background-color: #ffffff;
+#+HTML_HEAD:   min-height: calc(100vh - 45px);
+#+HTML_HEAD: }
+#+HTML_HEAD:
 #+HTML_HEAD: /* Responsive Design */
 #+HTML_HEAD: @media screen and (max-width: 768px) {
+#+HTML_HEAD:   #table-of-contents {
+#+HTML_HEAD:     position: static;
+#+HTML_HEAD:     width: 100%;
+#+HTML_HEAD:     height: auto;
+#+HTML_HEAD:     border-right: none;
+#+HTML_HEAD:     border-bottom: 2px solid #0000aa;
+#+HTML_HEAD:   }
+#+HTML_HEAD:   
+#+HTML_HEAD:   #content {
+#+HTML_HEAD:     margin-left: 0;
+#+HTML_HEAD:   }
+#+HTML_HEAD:   
 #+HTML_HEAD:   body {
 #+HTML_HEAD:     font-size: 14px;
 #+HTML_HEAD:     padding: 10px;
@@ -53,6 +168,7 @@
 #+HTML_HEAD:     font-size: 0.85em;
 #+HTML_HEAD:   }
 #+HTML_HEAD: }
+#+HTML_HEAD:
 #+HTML_HEAD: @media screen and (max-width: 480px) {
 #+HTML_HEAD:   body {
 #+HTML_HEAD:     font-size: 12px;
@@ -65,39 +181,7 @@
 #+HTML_HEAD:     font-size: 0.75em;
 #+HTML_HEAD:   }
 #+HTML_HEAD: }
-#+HTML_HEAD:
-#+HTML_HEAD: .header {
-#+HTML_HEAD: text-align: center;
-#+HTML_HEAD: margin: 0px;
-#+HTML_HEAD: background-color: #0000aa;
-#+HTML_HEAD: color: #ffffff;
-#+HTML_HEAD: padding: 0px;
-#+HTML_HEAD: flex-shrink: 0;
-#+HTML_HEAD: word-wrap: break-word;
-#+HTML_HEAD:   font-family: DOSVGA, monospace;
-#+HTML_HEAD: }
-#+HTML_HEAD:
-#+HTML_HEAD: .header a {
-#+HTML_HEAD: color: #ffffff;
-#+HTML_HEAD: text-decoration: none;
-#+HTML_HEAD: font-size: 2.04em;
-#+HTML_HEAD: white-space: nowrap;
-#+HTML_HEAD: transition: all 0.3s ease;
-#+HTML_HEAD: padding: 0px;
-#+HTML_HEAD: }
-#+HTML_HEAD:
-#+HTML_HEAD: .header a:hover {
-#+HTML_HEAD: color: #bababa;
-#+HTML_HEAD: }
-#+HTML_HEAD:
-#+HTML_HEAD:
-#+HTML_HEAD: @font-face {
-#+HTML_HEAD:   font-family: DOSVGA;
-#+HTML_HEAD:   src: url('/home/praaneshnair/.config/doom/perfect-dos-vga-437-win.ttf') format('truetype');
-#+HTML_HEAD: }
-
 #+HTML_HEAD: </style>
 #+HTML_HEAD: <div class="header">
 #+HTML_HEAD: <a href="https://compileartisan.pages.dev/">CompileArtisan</a>
 #+HTML_HEAD: </div>
-
