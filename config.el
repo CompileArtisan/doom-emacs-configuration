@@ -242,3 +242,17 @@
       (message "Converted %s to PDF!" file))))
 (map! :leader
       :desc "Convert .pptx to PDF" :n "c" #'my/dired-convert-to-pdf)
+
+
+
+(defun my/dired-marp-pptx ()
+  "Run `marp --pptx <file> --allow-local-files` on the current file in dired."
+  (interactive)
+  (let ((file (dired-get-file-for-visit)))  ;; Get the file under the cursor
+    (if (and file (string= (file-name-extension file) "md"))  ;; Check if it's a Markdown file
+        (shell-command (concat "marp --pptx " (shell-quote-argument file) " --allow-local-files"))
+      (message "Not a Markdown file!"))))
+(map! :after dired
+      :map dired-mode-map
+      :n "SPC m p" #'my/dired-marp-pptx)
+
