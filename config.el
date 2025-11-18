@@ -191,6 +191,16 @@
   (centaur-tabs-headline-match))
 
 
+;; Initial Buffer is scratch
+(setq initial-buffer-choice t)
+(setq doom-fallback-buffer-name "*scratch*")
+(setq initial-major-mode 'org-mode)
+(setq doom-scratch-initial-major-mode 'org-mode)
+(with-current-buffer (get-buffer-create "*scratch*")
+  (org-mode))
+(setq initial-scratch-message nil)
+
+
 ;;; Elfeed
 
 (use-package! elfeed)
