@@ -6,7 +6,7 @@
 # --
 
 
-\documentclass[12pt]{article}
+\documentclass[8pt]{extarticle}
 \usepackage[a4paper,margin=0.9in]{geometry}
 \usepackage{enumitem}
 \usepackage{hyperref}

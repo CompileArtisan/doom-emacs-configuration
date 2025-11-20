@@ -52,7 +52,7 @@
 (defun insert-org-setupfile ()
   "Insert SETUPFILE directive."
   (interactive)
-  (insert "#+SETUPFILE: /home/praaneshnair/.config/doom/preamble.org\n"))
+  (insert "#+SETUPFILE: /home/praaneshnair/.config/doom/preamble-html.org\n"))
 
 (defun insert-markdown-template ()
   "Insert YAML + Markdown structure for Org export."
@@ -168,7 +168,8 @@
 
 
 ;;; UI Tweaks
-
+(custom-set-faces!
+  '(cursor :background "#4DA6E3"))
 (setq display-line-numbers-type 'relative
       confirm-kill-emacs nil)
 
