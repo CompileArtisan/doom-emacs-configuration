@@ -234,13 +234,15 @@
 
 ;;; Org Agenda
 (setq org-agenda-span 45)
+(after! org
+  (setq org-use-tag-inheritance t))
 
 
 
 (defun pn/open-agenda-tasks ()
   "Open the default agenda view filtered to the :tasks: tag."
   (interactive)
-  (org-agenda nil "a")  ;; your default agenda view
+  (org-agenda nil "a") 
   (org-agenda-filter-apply '("+tasks") 'tag))
 (map! :leader
       "oat" #'pn/open-agenda-tasks)
