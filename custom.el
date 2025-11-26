@@ -48,7 +48,8 @@
      "\\`file:///home/praaneshnair/OneDrive/Assignments/Semester-4/evs/barun/AIE23135-EVS-Assignment\\.org\\'"
      "\\`file:///home/praaneshnair/gitprojects/website/src/content/blog/paste-cat\\.org\\'"
      "\\`file:///home/praaneshnair/OneDrive/Study Material/Semester-4/introduction to design analysis of algorithms DAA/notes/my-notes-on-algorithms\\.org\\'"))
- '(package-selected-packages '(csv-mode elfeed mermaid-mode org-ref pdf-tools))
+ '(package-selected-packages
+   '(astro-ts-mode csv-mode elfeed mermaid-mode org-ref pdf-tools))
  '(safe-local-variable-values
    '((eval add-to-list 'org-export-before-processing-hook
       (lambda (be) (org-babel-tangle)))

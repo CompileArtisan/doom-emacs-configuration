@@ -236,6 +236,27 @@
 (setq org-agenda-span 45)
 
 
+
+(defun pn/open-agenda-tasks ()
+  "Open the default agenda view filtered to the :tasks: tag."
+  (interactive)
+  (org-agenda nil "a")  ;; your default agenda view
+  (org-agenda-filter-apply '("+tasks") 'tag))
+(map! :leader
+      "oat" #'pn/open-agenda-tasks)
+
+
+
+(defun pn/open-agenda-routine ()
+  "Open the default agenda view filtered to the :routine: tag."
+  (interactive)
+  (org-agenda nil "a")
+  (org-agenda-filter-apply '("+routine") 'tag))
+(map! :leader
+      "oar" #'pn/open-agenda-routine)
+
+
+
 ;;; vterm
 (setq vterm-shell "/usr/bin/zsh")
 
