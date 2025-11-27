@@ -15,7 +15,7 @@
       confirm-kill-emacs nil)
 
 ;; Splash screen
-(setq fancy-splash-image (expand-file-name "assets/images/doom-emacs-white.svg" doom-private-dir))
+(setq fancy-splash-image (expand-file-name "doom-emacs-white.svg" doom-private-dir))
 
 ;; Initial buffer
 (setq initial-buffer-choice t
