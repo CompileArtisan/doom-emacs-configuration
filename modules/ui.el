@@ -18,11 +18,11 @@
 (setq fancy-splash-image (expand-file-name "doom-emacs-white.svg" doom-private-dir))
 
 ;; Initial buffer
-(setq initial-buffer-choice t
-      doom-fallback-buffer-name "*scratch*"
-      initial-major-mode 'org-mode
-      doom-scratch-initial-major-mode 'org-mode
-      initial-scratch-message nil)
+;; (setq initial-buffer-choice t
+;; doom-fallback-buffer-name "*scratch*"
+;; initial-major-mode 'org-mode
+;; doom-scratch-initial-major-mode 'org-mode
+;; initial-scratch-message nil)
 
 (with-current-buffer (get-buffer-create "*scratch*")
   (org-mode))
