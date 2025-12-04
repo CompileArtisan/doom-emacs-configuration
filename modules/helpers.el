@@ -69,3 +69,10 @@
       (message "Not a Markdown file!"))))
 
 
+(defun my/current-date-formatted ()
+  "Used in a yasnippet to quickly insert my blog frontmatter boilerplate."
+  (setq value (calendar-current-date))
+  (format "%04d-%02d-%02d"
+          (nth 2 value)  ; year
+          (nth 0 value)  ; month
+          (nth 1 value))) ; day

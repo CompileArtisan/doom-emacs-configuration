@@ -9,12 +9,12 @@
 #+begin_export markdown
 ---
 title: "$1"
-date: $2-$3-$4
-description: "$5"
+date: `(my/current-date-formatted)`
+description: "$2"
 ---
 #+end_export
 # date: YYYY-MM-DD
 
 #+TOC: headlines 2
 
-$6
+$3
