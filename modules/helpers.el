@@ -6,6 +6,12 @@
   (save-buffer)
   (org-latex-export-to-pdf))
 
+(defun save-and-export-markdown ()
+  "Save and export current Org buffer to Markdown."
+  (interactive)
+  (save-buffer)
+  (org-md-export-to-markdown))
+
 (defun insert-org-setupfile ()
   "Insert SETUPFILE directive with portable path."
   (interactive)

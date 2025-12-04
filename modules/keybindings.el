@@ -1,6 +1,7 @@
 ;;; modules/keybindings.el -*- lexical-binding: t; -*-
 
 ;; Org mode
+(map! :mode 'org :leader "M" #'save-and-export-markdown)
 (map! :mode 'org :leader "R" #'save-and-export)
 (map! :leader "o o" #'insert-org-setupfile)
 (map! :leader "o m" #'insert-markdown-template)
