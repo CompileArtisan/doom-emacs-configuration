@@ -1,6 +1,6 @@
 ;;; modules/helpers.el -*- lexical-binding: t; -*-
 
-(defun save-and-export ()
+(defun save-and-export-pdf ()
   "Save and export current Org buffer to PDF via LaTeX."
   (interactive)
   (save-buffer)
