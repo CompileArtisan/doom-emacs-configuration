@@ -3,6 +3,7 @@
 ;; Org mode
 (map! :mode 'org :leader "M" #'save-and-export-markdown)
 (map! :mode 'org :leader "R" #'save-and-export-pdf)
+(map! :mode 'org :leader "H" #'save-and-export-html)
 (map! :leader "o o" #'insert-org-setupfile)
 (map! :leader "o m" #'insert-markdown-template)
 (map! :leader "o i" #'insert-ieee-org-template)

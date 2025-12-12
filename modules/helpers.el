@@ -12,6 +12,13 @@
   (save-buffer)
   (org-md-export-to-markdown))
 
+(defun save-and-export-html ()
+  "Save and export current Org buffer to HTML."
+  (interactive)
+  (save-buffer)
+  (org-html-export-to-html))
+
+
 (defun insert-org-setupfile ()
   "Insert SETUPFILE directive with portable path."
   (interactive)

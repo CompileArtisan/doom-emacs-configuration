@@ -31,12 +31,16 @@
 #+HTML_HEAD:   word-wrap: break-word;
 #+HTML_HEAD: }
 #+HTML_HEAD: /* Styling code blocks */
-#+HTML_HEAD: .codeblock {
+#+HTML_HEAD: pre.src.src-html, pre.src.src-txt, pre.src.src-python, pre.src.src-java {
 #+HTML_HEAD:   font-family: 'Courier New', monospace;
 #+HTML_HEAD:   background-color: #222;
 #+HTML_HEAD:   color: white;
 #+HTML_HEAD:   padding: 15px;
-#+HTML_HEAD:   border-radius: 5px;
+#+HTML_HEAD:   font-size: 1.1em;
+#+HTML_HEAD:   border-radius: 0.5em;
+#+HTML_HEAD: }
+#+HTML_HEAD: code {
+#+HTML_HEAD:   font-size: 1em;
 #+HTML_HEAD: }
 #+HTML_HEAD: img {
 #+HTML_HEAD:      max-width: 100%;
@@ -165,7 +169,7 @@
 #+HTML_HEAD:     font-size: 1.5em;
 #+HTML_HEAD:   }
 #+HTML_HEAD:   pre {
-#+HTML_HEAD:     font-size: 0.85em;
+#+HTML_HEAD:     font-size: 1.3em;
 #+HTML_HEAD:   }
 #+HTML_HEAD: }
 #+HTML_HEAD:
@@ -178,7 +182,7 @@
 #+HTML_HEAD:     font-size: 1.3em;
 #+HTML_HEAD:   }
 #+HTML_HEAD:   pre {
-#+HTML_HEAD:     font-size: 0.75em;
+#+HTML_HEAD:     font-size: 1.3em;
 #+HTML_HEAD:   }
 #+HTML_HEAD: }
 #+HTML_HEAD: </style>
