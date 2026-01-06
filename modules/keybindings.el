@@ -12,6 +12,7 @@
 ;; Agenda
 (map! :leader "oat" #'pn/open-agenda-tasks)
 (map! :leader "oar" #'pn/open-agenda-routine)
+(map! :leader "oac" #'pn/open-agenda-college)
 
 ;; Exit
 (map! :leader "ke" #'save-buffers-kill-terminal)

@@ -64,6 +64,12 @@
   (org-agenda nil "a")
   (org-agenda-filter-apply '("+routine") 'tag))
 
+(defun pn/open-agenda-college ()
+  "Open the default agenda view filtered to the :college: tag."
+  (interactive)
+  (org-agenda nil "a")
+  (org-agenda-filter-apply '("+college") 'tag))
+
 (defun my/dired-convert-to-pdf ()
   "Convert the selected .pptx file to PDF using LibreOffice."
   (interactive)
