@@ -17,3 +17,6 @@
 
 ;; Elfeed
 (use-package! elfeed)
+
+;; mdx support
+(add-to-list 'auto-mode-alist '("\\.mdx\\'" . markdown-mode))
