@@ -74,3 +74,7 @@
 
 ;; Catpuccin
 (package! catppuccin-theme)
+
+;; timetab.el
+(package! emacs-conflict
+  :recipe (:host github :repo "nairadithya/timetab.el"))
