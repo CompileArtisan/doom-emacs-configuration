@@ -49,7 +49,8 @@
      "\\`file:///home/praaneshnair/gitprojects/website/src/content/blog/paste-cat\\.org\\'"
      "\\`file:///home/praaneshnair/OneDrive/Study Material/Semester-4/introduction to design analysis of algorithms DAA/notes/my-notes-on-algorithms\\.org\\'"))
  '(package-selected-packages
-   '(astro-ts-mode csv-mode elfeed mermaid-mode ob-async org-ref pdf-tools))
+   '(astro-ts-mode csv-mode elfeed mermaid-mode mongo ob-async ob-mongo org-ref
+     pdf-tools))
  '(safe-local-variable-values
    '((eval add-to-list 'org-export-before-processing-hook
       (lambda (be) (org-babel-tangle)))

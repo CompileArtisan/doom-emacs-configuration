@@ -8,6 +8,7 @@
 (load! "modules/web")
 (load! "modules/helpers")
 (load! "modules/keybindings")
+(load! "modules/ob-mongo")
 
 ;; vterm
 (setq vterm-shell "/usr/bin/zsh")
@@ -20,3 +21,8 @@
 
 ;; mdx support
 (add-to-list 'auto-mode-alist '("\\.mdx\\'" . markdown-mode))
+
+;; orgbabel
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((python . t)))
