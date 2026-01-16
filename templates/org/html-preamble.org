@@ -146,6 +146,50 @@
 #+HTML_HEAD:   background-color: #ffffff;
 #+HTML_HEAD:   min-height: calc(100vh - 45px);
 #+HTML_HEAD: }
+#+HTML_HEAD: table {
+  #+HTML_HEAD: border-collapse: collapse;
+  #+HTML_HEAD: margin: 1.5rem auto;
+  #+HTML_HEAD: font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  #+HTML_HEAD: font-size: 1rem;
+  #+HTML_HEAD: background: #ffffff;
+  #+HTML_HEAD: box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  #+HTML_HEAD: border-radius: 10px;
+  #+HTML_HEAD: overflow: hidden; /* clips rounded corners */
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: /* Remove legacy borders from org export */
+#+HTML_HEAD: table[border] {
+  #+HTML_HEAD: border: none;
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: /* Table cells */
+#+HTML_HEAD: td {
+  #+HTML_HEAD: padding: 0.75rem 1.1rem;
+  #+HTML_HEAD: text-align: center;
+  #+HTML_HEAD: border: 1px solid #e5e7eb; /* light gray */
+  #+HTML_HEAD: font-weight: 500;
+  #+HTML_HEAD: color: #111827;
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: /* Align org-left cleanly (override if needed) */
+#+HTML_HEAD: td.org-left {
+  #+HTML_HEAD: text-align: center;
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: /* Zebra striping */
+#+HTML_HEAD: tbody tr:nth-child(even) {
+  #+HTML_HEAD: background-color: #f9fafb;
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: /* Hover effect */
+#+HTML_HEAD: tbody tr:hover {
+  #+HTML_HEAD: background-color: #eef2ff;
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: /* Make letters stand out */
+#+HTML_HEAD: td {
+  #+HTML_HEAD: letter-spacing: 0.05em;
+#+HTML_HEAD: }
 #+HTML_HEAD:
 #+HTML_HEAD: /* Responsive Design */
 #+HTML_HEAD: @media screen and (max-width: 768px) {
