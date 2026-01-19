@@ -200,6 +200,17 @@
 #+HTML_HEAD:     border-right: none;
 #+HTML_HEAD:     border-bottom: 2px solid #0000aa;
 #+HTML_HEAD:   }
+#+HTML_HEAD:  pre.src {
+#+HTML_HEAD:    position: relative;
+#+HTML_HEAD:    left: 50%;
+#+HTML_HEAD:    right: 50%;
+#+HTML_HEAD:    margin-left: -50vw;
+#+HTML_HEAD:    margin-right: -50vw;
+#+HTML_HEAD:    width: 100vw;
+#+HTML_HEAD:    border-radius: 0;
+#+HTML_HEAD:    box-sizing: border-box;
+#+HTML_HEAD:  }
+
 #+HTML_HEAD:   
 #+HTML_HEAD:   #content {
 #+HTML_HEAD:     margin-left: 0;
