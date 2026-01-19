@@ -5,6 +5,15 @@
 % Custom HTML header
 #+HTML_HEAD: <meta charset="UTF-8">
 #+HTML_HEAD: <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+#+HTML_HEAD: <meta property="og:image" content="https://notes.compileartisan.dev/assets/og-image.png">
+#+HTML_HEAD: <meta property="og:image:width" content="1200">
+#+HTML_HEAD: <meta property="og:image:height" content="630">
+#+HTML_HEAD: <meta property="og:type" content="website">
+#+HTML_HEAD: <meta property="og:title" content="%TITLE%">
+#+HTML_HEAD: <meta property="og:description" content="Notes from CompileArtisan">
+#+HTML_HEAD: <meta property="og:url" content="https://notes.compileartisan.dev">
+#+HTML_HEAD: <meta name="twitter:card" content="summary_large_image">
+#+HTML_HEAD: <meta name="twitter:image" content="https://notes.compileartisan.dev/assets/og-image.png">
 #+HTML_HEAD: <style>
 #+HTML_HEAD: /* General styles */
 #+HTML_HEAD: body {
