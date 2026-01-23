@@ -1,0 +1,23 @@
+# -*- mode: snippet -*-
+# name: uv venv + pip install
+# uuid: 
+# key: <uv
+# condition: t
+# --
+
+
+#+PROPERTY: header-args:python :eval never-export
+#+name: venv-python
+#+begin_src bash :results output none :exports none
+#!/usr/bin/env sh
+
+export PATH="$HOME/.cargo/bin:$HOME/.local/bin:/opt/homebrew/bin:$PATH"
+uv venv .venv
+uv pip install $0
+
+printf "%s\n" "$(pwd)/.venv/bin/python"
+#+end_src
+#+begin_src elisp :exports none
+(setq org-babel-python-command
+      (string-trim (org-babel-ref-resolve "venv-python")))
+#+end_src
