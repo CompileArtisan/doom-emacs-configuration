@@ -68,6 +68,10 @@
 (package! web-mode)
 (package! elfeed)
 (package! org-ref)
+(package! jupyter)
+(package! auto-complete)
+(package! code-cells)
+(package! lsp-pyright)
 
 
 (package! ob-mermaid)

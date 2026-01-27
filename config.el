@@ -9,6 +9,7 @@
 (load! "modules/helpers")
 (load! "modules/keybindings")
 (load! "modules/ob-mongo")
+(load! "modules/jupyter")
 
 ;; vterm
 (setq vterm-shell "/usr/bin/zsh")
