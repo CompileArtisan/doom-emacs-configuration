@@ -11,6 +11,7 @@
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{algorithmic}
 \usepackage{float}
+\usepackage[T1]{fontenc}
 \usepackage{listings}[breaklines=true]
 \lstset{
   backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
