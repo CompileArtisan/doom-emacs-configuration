@@ -31,6 +31,15 @@
 #+HTML_HEAD: h1, h2, h3 {
 #+HTML_HEAD:   font-family: 'Helvetica', sans-serif;
 #+HTML_HEAD: }
+#+HTML_HEAD: a {
+#+HTML_HEAD:   color: #0000aa;
+#+HTML_HEAD: }
+#+HTML_HEAD: a:hover {
+#+HTML_HEAD:   background-color: #0000aa;
+#+HTML_HEAD:   color: #ffffff;
+#+HTML_HEAD:   border-radius: 0.2em;
+#+HTML_HEAD:   transition: background-color 0.3s ease, transform 0.3s ease;
+#+HTML_HEAD: }
 #+HTML_HEAD: pre {
 #+HTML_HEAD:   background-color: #333;
 #+HTML_HEAD:   color: white;
@@ -49,7 +58,8 @@
 #+HTML_HEAD:   border-radius: 0.5em;
 #+HTML_HEAD: }
 #+HTML_HEAD: code {
-#+HTML_HEAD:   font-size: 1em;
+#+HTML_HEAD:   font-size: 1.5em;
+#+HTML_HEAD:   padding: 0 0.5em;
 #+HTML_HEAD: }
 #+HTML_HEAD: img {
 #+HTML_HEAD:      max-width: 100%;
