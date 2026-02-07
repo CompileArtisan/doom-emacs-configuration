@@ -127,6 +127,22 @@
 #+HTML_HEAD:   margin-bottom: 15px;
 #+HTML_HEAD: }
 #+HTML_HEAD:
+#+HTML_HEAD: /* Search box styles */
+#+HTML_HEAD: #toc-search {
+#+HTML_HEAD:   width: 100%;
+#+HTML_HEAD:   padding: 8px 12px;
+#+HTML_HEAD:   margin-bottom: 15px;
+#+HTML_HEAD:   border: 1px solid #ddd;
+#+HTML_HEAD:   border-radius: 4px;
+#+HTML_HEAD:   font-size: 0.9em;
+#+HTML_HEAD:   box-sizing: border-box;
+#+HTML_HEAD: }
+#+HTML_HEAD:
+#+HTML_HEAD: #toc-search:focus {
+#+HTML_HEAD:   outline: none;
+#+HTML_HEAD:   border-color: #0000aa;
+#+HTML_HEAD: }
+#+HTML_HEAD:
 #+HTML_HEAD: #table-of-contents ul {
 #+HTML_HEAD:   list-style-type: none;
 #+HTML_HEAD:   padding-left: 0;
@@ -157,6 +173,19 @@
 #+HTML_HEAD:   background-color: #e8e8ff;
 #+HTML_HEAD: }
 #+HTML_HEAD:
+#+HTML_HEAD: /* Active TOC link (scroll spy) */
+#+HTML_HEAD: #table-of-contents a.active {
+#+HTML_HEAD:   color: #0000aa;
+#+HTML_HEAD:   background-color: #e8e8ff;
+#+HTML_HEAD:   font-weight: bold;
+#+HTML_HEAD:   border-left: 3px solid #0000aa;
+#+HTML_HEAD: }
+#+HTML_HEAD:
+#+HTML_HEAD: /* Hidden items during search */
+#+HTML_HEAD: #table-of-contents li.hidden {
+#+HTML_HEAD:   display: none;
+#+HTML_HEAD: }
+#+HTML_HEAD:
 #+HTML_HEAD: /* Main content area */
 #+HTML_HEAD: #content {
 #+HTML_HEAD:   margin-left: 280px;
@@ -173,39 +202,33 @@
   #+HTML_HEAD: background: #ffffff;
   #+HTML_HEAD: box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   #+HTML_HEAD: border-radius: 10px;
-  #+HTML_HEAD: overflow: hidden; /* clips rounded corners */
+  #+HTML_HEAD: overflow: hidden;
 #+HTML_HEAD: }
 #+HTML_HEAD: 
-#+HTML_HEAD: /* Remove legacy borders from org export */
 #+HTML_HEAD: table[border] {
   #+HTML_HEAD: border: none;
 #+HTML_HEAD: }
 #+HTML_HEAD: 
-#+HTML_HEAD: /* Table cells */
 #+HTML_HEAD: td {
   #+HTML_HEAD: padding: 0.75rem 1.1rem;
   #+HTML_HEAD: text-align: center;
-  #+HTML_HEAD: border: 1px solid #e5e7eb; /* light gray */
+  #+HTML_HEAD: border: 1px solid #e5e7eb;
   #+HTML_HEAD: font-weight: 500;
   #+HTML_HEAD: color: #111827;
 #+HTML_HEAD: }
 #+HTML_HEAD: 
-#+HTML_HEAD: /* Align org-left cleanly (override if needed) */
 #+HTML_HEAD: td.org-left {
   #+HTML_HEAD: text-align: center;
 #+HTML_HEAD: }
 #+HTML_HEAD: 
-#+HTML_HEAD: /* Zebra striping */
 #+HTML_HEAD: tbody tr:nth-child(even) {
   #+HTML_HEAD: background-color: #f9fafb;
 #+HTML_HEAD: }
 #+HTML_HEAD: 
-#+HTML_HEAD: /* Hover effect */
 #+HTML_HEAD: tbody tr:hover {
   #+HTML_HEAD: background-color: #eef2ff;
 #+HTML_HEAD: }
 #+HTML_HEAD: 
-#+HTML_HEAD: /* Make letters stand out */
 #+HTML_HEAD: td {
   #+HTML_HEAD: letter-spacing: 0.05em;
 #+HTML_HEAD: }
@@ -229,7 +252,6 @@
 #+HTML_HEAD:    border-radius: 0;
 #+HTML_HEAD:    box-sizing: border-box;
 #+HTML_HEAD:  }
-
 #+HTML_HEAD:   
 #+HTML_HEAD:   #content {
 #+HTML_HEAD:     margin-left: 0;
@@ -263,3 +285,106 @@
 #+HTML_HEAD: <div class="header">
 #+HTML_HEAD: <a href="https://compileartisan.pages.dev/">CompileArtisan</a>
 #+HTML_HEAD: </div>
+#+HTML_HEAD: <script>
+#+HTML_HEAD: document.addEventListener('DOMContentLoaded', function() {
+#+HTML_HEAD:   // Add search box to TOC
+#+HTML_HEAD:   const toc = document.getElementById('table-of-contents');
+#+HTML_HEAD:   if (toc) {
+#+HTML_HEAD:     const h2 = toc.querySelector('h2');
+#+HTML_HEAD:     if (h2) {
+#+HTML_HEAD:       const searchBox = document.createElement('input');
+#+HTML_HEAD:       searchBox.type = 'text';
+#+HTML_HEAD:       searchBox.id = 'toc-search';
+#+HTML_HEAD:       searchBox.placeholder = 'Search headings...';
+#+HTML_HEAD:       h2.insertAdjacentElement('afterend', searchBox);
+#+HTML_HEAD:       
+#+HTML_HEAD:       // Search functionality
+#+HTML_HEAD:       searchBox.addEventListener('input', function(e) {
+#+HTML_HEAD:         const searchTerm = e.target.value.toLowerCase();
+#+HTML_HEAD:         const tocLinks = toc.querySelectorAll('li');
+#+HTML_HEAD:         
+#+HTML_HEAD:         tocLinks.forEach(li => {
+#+HTML_HEAD:           const text = li.textContent.toLowerCase();
+#+HTML_HEAD:           if (text.includes(searchTerm)) {
+#+HTML_HEAD:             li.classList.remove('hidden');
+#+HTML_HEAD:           } else {
+#+HTML_HEAD:             li.classList.add('hidden');
+#+HTML_HEAD:           }
+#+HTML_HEAD:         });
+#+HTML_HEAD:       });
+#+HTML_HEAD:     }
+#+HTML_HEAD:   }
+#+HTML_HEAD:   
+#+HTML_HEAD:   // Scroll spy functionality
+#+HTML_HEAD:   const sections = [];
+#+HTML_HEAD:   const tocLinks = document.querySelectorAll('#table-of-contents a');
+#+HTML_HEAD:   
+#+HTML_HEAD:   // Build sections array
+#+HTML_HEAD:   tocLinks.forEach(link => {
+#+HTML_HEAD:     const href = link.getAttribute('href');
+#+HTML_HEAD:     if (href && href.startsWith('#')) {
+#+HTML_HEAD:       const target = document.querySelector(href);
+#+HTML_HEAD:       if (target) {
+#+HTML_HEAD:         sections.push({
+#+HTML_HEAD:           id: href,
+#+HTML_HEAD:           element: target,
+#+HTML_HEAD:           link: link
+#+HTML_HEAD:         });
+#+HTML_HEAD:       }
+#+HTML_HEAD:     }
+#+HTML_HEAD:   });
+#+HTML_HEAD:   
+#+HTML_HEAD:   function updateActiveLink() {
+#+HTML_HEAD:     const scrollPos = window.scrollY + 100; // Offset for header
+#+HTML_HEAD:     
+#+HTML_HEAD:     let currentSection = null;
+#+HTML_HEAD:     
+#+HTML_HEAD:     // Find the current section
+#+HTML_HEAD:     for (let i = sections.length - 1; i >= 0; i--) {
+#+HTML_HEAD:       const section = sections[i];
+#+HTML_HEAD:       if (section.element.offsetTop <= scrollPos) {
+#+HTML_HEAD:         currentSection = section;
+#+HTML_HEAD:         break;
+#+HTML_HEAD:       }
+#+HTML_HEAD:     }
+#+HTML_HEAD:     
+#+HTML_HEAD:     // Remove all active classes
+#+HTML_HEAD:     tocLinks.forEach(link => link.classList.remove('active'));
+#+HTML_HEAD:     
+#+HTML_HEAD:     // Add active class to current section
+#+HTML_HEAD:     if (currentSection) {
+#+HTML_HEAD:       currentSection.link.classList.add('active');
+#+HTML_HEAD:       
+#+HTML_HEAD:       // Scroll TOC to show active link
+#+HTML_HEAD:       const tocContainer = document.getElementById('table-of-contents');
+#+HTML_HEAD:       if (tocContainer) {
+#+HTML_HEAD:         const linkTop = currentSection.link.offsetTop;
+#+HTML_HEAD:         const linkHeight = currentSection.link.offsetHeight;
+#+HTML_HEAD:         const containerHeight = tocContainer.clientHeight;
+#+HTML_HEAD:         const containerScroll = tocContainer.scrollTop;
+#+HTML_HEAD:         
+#+HTML_HEAD:         // Check if link is out of view
+#+HTML_HEAD:         if (linkTop < containerScroll || linkTop + linkHeight > containerScroll + containerHeight) {
+#+HTML_HEAD:           // Smooth scroll the TOC to center the active link
+#+HTML_HEAD:           tocContainer.scrollTo({
+#+HTML_HEAD:             top: linkTop - containerHeight / 2,
+#+HTML_HEAD:             behavior: 'smooth'
+#+HTML_HEAD:           });
+#+HTML_HEAD:         }
+#+HTML_HEAD:       }
+#+HTML_HEAD:     }
+#+HTML_HEAD:   }
+#+HTML_HEAD:   
+#+HTML_HEAD:   // Throttle scroll events for performance
+#+HTML_HEAD:   let scrollTimeout;
+#+HTML_HEAD:   window.addEventListener('scroll', function() {
+#+HTML_HEAD:     if (scrollTimeout) {
+#+HTML_HEAD:       window.cancelAnimationFrame(scrollTimeout);
+#+HTML_HEAD:     }
+#+HTML_HEAD:     scrollTimeout = window.requestAnimationFrame(updateActiveLink);
+#+HTML_HEAD:   });
+#+HTML_HEAD:   
+#+HTML_HEAD:   // Initial call
+#+HTML_HEAD:   updateActiveLink();
+#+HTML_HEAD: });
+#+HTML_HEAD: </script>
