@@ -23,6 +23,10 @@
       :map dired-mode-map
       :n "SPC m p" #'my/dired-marp-pptx)
 
+(map! :after dired
+      :map dired-mode-map
+      :n "y f" #'my/yank-file-uri)
+
 ;; LaTeX
 (map! :map latex-mode-map :localleader "p" #'force-latex-preview-update)
 

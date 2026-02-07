@@ -95,3 +95,22 @@
           (nth 2 value)  ; year
           (nth 0 value)  ; month
           (nth 1 value))) ; day
+
+(defun my/yank-file-uri ()
+  "Copy file URI(s) to clipboard using wl-copy."
+  (interactive)
+  (let* ((files (if (derived-mode-p 'dired-mode)
+                    (dired-get-marked-files)
+                  (list (buffer-file-name))))
+         (uris (mapconcat (lambda (f)
+                            (concat "file://" (expand-file-name f)))
+                          files
+                          "\n")))
+    (when uris
+      (with-temp-buffer
+        (insert uris)
+        (call-process-region (point-min) (point-max)
+                             "wl-copy" nil nil nil
+                             "--type" "text/uri-list"))
+      (message "Copied %d file URI(s)" (length files)))))
+
