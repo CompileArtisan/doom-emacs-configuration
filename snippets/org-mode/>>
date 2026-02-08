@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: xrightarrow
+# uuid: 
+# key: >>
+# condition: t
+# --
+\xrightarrow[\text{}]{$0}
