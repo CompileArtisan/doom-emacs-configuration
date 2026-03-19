@@ -1,9 +1,9 @@
 ;;; modules/ui.el -*- lexical-binding: t; -*-
 
 ;; Fonts & Theme
-(setq doom-font (font-spec :family "JetBrainsMonoNL Nerd Font" :size 18)
-      doom-variable-pitch-font (font-spec :family "JetBrainsMonoNL Nerd Font" :size 22)
-      doom-big-font (font-spec :family "JetBrainsMonoNL Nerd Font" :size 34)
+(setq doom-font (font-spec :family "JetBrainsMonoNL Nerd Font" :size 17)
+      doom-variable-pitch-font (font-spec :family "JetBrainsMonoNL Nerd Font" :size 21)
+      doom-big-font (font-spec :family "JetBrainsMonoNL Nerd Font" :size 33)
       doom-theme 'doom-one)
 
 ;; Cursor
