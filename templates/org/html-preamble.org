@@ -49,7 +49,7 @@
 #+HTML_HEAD:   word-wrap: break-word;
 #+HTML_HEAD: }
 #+HTML_HEAD: /* Styling code blocks */
-#+HTML_HEAD: pre.src.src-html, pre.src.src-txt, pre.src.src-python, pre.src.src-java {
+#+HTML_HEAD: pre.src.src-html, pre.src.src-txt, pre.src.src-python, pre.src.src-java, pre.src.src-cpp {
 #+HTML_HEAD:   font-family: 'Courier New', monospace;
 #+HTML_HEAD:   background-color: #222;
 #+HTML_HEAD:   color: white;

@@ -19,7 +19,9 @@
 
 ;; Enable smooth pixel-precision scrolling globally
 (pixel-scroll-precision-mode 1)
-
+(setq idle-update-delay 0.01)
+(setq jit-lock-defer-time 0)
+(setq jit-lock-stealth-time 1)
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
 (setq mouse-wheel-progressive-speed nil)
 (setq mouse-wheel-follow-mouse t)
