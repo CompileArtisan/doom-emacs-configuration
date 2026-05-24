@@ -17,6 +17,16 @@
 ;; dired
 (add-hook 'dired-mode-hook 'display-line-numbers-mode)
 
+;; Enable smooth pixel-precision scrolling globally
+(pixel-scroll-precision-mode 1)
+
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
+(setq mouse-wheel-progressive-speed nil)
+(setq mouse-wheel-follow-mouse t)
+
+(setq scroll-step 1
+      scroll-conservatively 101)
+
 ;; Elfeed
 (use-package! elfeed)
 
