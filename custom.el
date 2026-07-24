@@ -16,7 +16,8 @@
      "http://theverge.com/rss/index.xml"
      "https://compileartisan.pages.dev/rss.xml"
      "https://adithyanair.com/rss.xml"))
- '(org-agenda-files '("~/Documents/events.org"))
+ '(org-agenda-files
+   '("~/gdrive/garage/events.org"))
  '(org-html-head-extra "")
  '(org-latex-classes
    '(("IEEEtran" "\\documentclass[conference]{IEEEtran}"

@@ -15,275 +15,370 @@
 #+HTML_HEAD: <meta name="twitter:card" content="summary_large_image">
 #+HTML_HEAD: <meta name="twitter:image" content="https://notes.compileartisan.dev/assets/og-image.png">
 #+HTML_HEAD: <style>
-#+HTML_HEAD: /* General styles */
+#+HTML_HEAD: /* ─── Reset & Base ─────────────────────────────────────── */
+#+HTML_HEAD: *, *::before, *::after {
+  #+HTML_HEAD: box-sizing: border-box;
+#+HTML_HEAD: }
+#+HTML_HEAD: 
 #+HTML_HEAD: body {
-#+HTML_HEAD:   font-family: 'Arial', sans-serif;
-#+HTML_HEAD:   line-height: 1.6;
-#+HTML_HEAD:   margin: 0;
-#+HTML_HEAD:   padding: 0;
-#+HTML_HEAD:   background-color: #f4f4f4;
+  #+HTML_HEAD: font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  #+HTML_HEAD: font-size: 15px;
+  #+HTML_HEAD: line-height: 1.7;
+  #+HTML_HEAD: margin: 0;
+  #+HTML_HEAD: padding: 0;
+  #+HTML_HEAD: background-color: #f5f5f7;
+  #+HTML_HEAD: color: #1a1a1a;
 #+HTML_HEAD: }
-#+HTML_HEAD:
-#+HTML_HEAD: #postamble, #preamble {
-#+HTML_HEAD:   margin-left: 280px;
-#+HTML_HEAD:   padding: 20px 40px;
+#+HTML_HEAD: 
+#+HTML_HEAD: /* ─── Typography ────────────────────────────────────────── */
+#+HTML_HEAD: h1, h2, h3, h4 {
+  #+HTML_HEAD: font-weight: 500;
+  #+HTML_HEAD: line-height: 1.3;
+  #+HTML_HEAD: color: #111;
+  #+HTML_HEAD: margin: 2rem 0 0.75rem;
 #+HTML_HEAD: }
-#+HTML_HEAD: h1, h2, h3 {
-#+HTML_HEAD:   font-family: 'Helvetica', sans-serif;
+#+HTML_HEAD: h1 { font-size: 1.75rem; }
+#+HTML_HEAD: h2 { font-size: 1.35rem; }
+#+HTML_HEAD: h3 { font-size: 1.1rem;  }
+#+HTML_HEAD: 
+#+HTML_HEAD: p {
+  #+HTML_HEAD: margin: 0 0 1rem;
+  #+HTML_HEAD: color: #2a2a2a;
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: /* ─── Block Quotes ─────────────────────────────────────── */
+#+HTML_HEAD: blockquote {
+#+HTML_HEAD:   margin: 1.8rem 0;
+#+HTML_HEAD:   padding: 1rem 1.5rem;
+#+HTML_HEAD:   background: #f8f8fc;
+#+HTML_HEAD:   border-left: 4px solid #4444cc;
+#+HTML_HEAD:   border-radius: 8px;
+#+HTML_HEAD:   color: #444;
+#+HTML_HEAD:   font-style: italic;
+#+HTML_HEAD:   position: relative;
+#+HTML_HEAD: }
+
+#+HTML_HEAD: blockquote::before {
+#+HTML_HEAD:   content: "❝";
+#+HTML_HEAD:   position: absolute;
+#+HTML_HEAD:   top: -8px;
+#+HTML_HEAD:   left: 12px;
+#+HTML_HEAD:   font-size: 2.8rem;
+#+HTML_HEAD:   color: #d6d6f5;
+#+HTML_HEAD:   font-family: Georgia, serif;
+#+HTML_HEAD:   line-height: 1;
+#+HTML_HEAD: }
+
+#+HTML_HEAD: blockquote p:last-child {
+#+HTML_HEAD:   margin-bottom: 0;
+#+HTML_HEAD: }
+
+#+HTML_HEAD: blockquote cite,
+#+HTML_HEAD: blockquote footer {
+#+HTML_HEAD:   display: block;
+#+HTML_HEAD:   margin-top: 0.8rem;
+#+HTML_HEAD:   color: #777;
+#+HTML_HEAD:   font-size: 0.9em;
+#+HTML_HEAD:   font-style: normal;
+#+HTML_HEAD:   text-align: right;
 #+HTML_HEAD: }
 #+HTML_HEAD: a {
-#+HTML_HEAD:   color: #0000aa;
+  #+HTML_HEAD: color: #2222cc;
+  #+HTML_HEAD: text-decoration: none;
 #+HTML_HEAD: }
 #+HTML_HEAD: a:hover {
-#+HTML_HEAD:   background-color: #0000aa;
-#+HTML_HEAD:   color: #ffffff;
-#+HTML_HEAD:   border-radius: 0.2em;
-#+HTML_HEAD:   transition: background-color 0.3s ease, transform 0.3s ease;
+  #+HTML_HEAD: text-decoration: underline;
+  #+HTML_HEAD: text-underline-offset: 3px;
 #+HTML_HEAD: }
-#+HTML_HEAD: pre {
-#+HTML_HEAD:   background-color: #333;
-#+HTML_HEAD:   color: white;
-#+HTML_HEAD:   padding: 10px;
-#+HTML_HEAD:   overflow-x: auto;
-#+HTML_HEAD:   white-space: pre-wrap;
-#+HTML_HEAD:   word-wrap: break-word;
-#+HTML_HEAD: }
-#+HTML_HEAD: /* Styling code blocks */
-#+HTML_HEAD: pre.src.src-html, pre.src.src-txt, pre.src.src-python, pre.src.src-java, pre.src.src-cpp {
-#+HTML_HEAD:   font-family: 'Courier New', monospace;
-#+HTML_HEAD:   background-color: #222;
-#+HTML_HEAD:   color: white;
-#+HTML_HEAD:   padding: 15px;
-#+HTML_HEAD:   font-size: 1.1em;
-#+HTML_HEAD:   border-radius: 0.5em;
-#+HTML_HEAD: }
-#+HTML_HEAD: code {
-#+HTML_HEAD:   font-size: 1.5em;
-#+HTML_HEAD:   padding: 0 0.5em;
-#+HTML_HEAD: }
-#+HTML_HEAD: img {
-#+HTML_HEAD:      max-width: 100%;
-#+HTML_HEAD:      height: auto;
-#+HTML_HEAD:      display: block;
-#+HTML_HEAD:      margin: 0 auto;
-#+HTML_HEAD: }
-#+HTML_HEAD:
-#+HTML_HEAD: .header {
-#+HTML_HEAD: text-align: center;
-#+HTML_HEAD: margin: 0px;
-#+HTML_HEAD: background-color: #0000aa;
-#+HTML_HEAD: color: #ffffff;
-#+HTML_HEAD: padding: 5px 0;
-#+HTML_HEAD: flex-shrink: 0;
-#+HTML_HEAD: word-wrap: break-word;
-#+HTML_HEAD: font-family: DOSVGA, monospace;
-#+HTML_HEAD: position: fixed;
-#+HTML_HEAD: top: 0;
-#+HTML_HEAD: left: 0;
-#+HTML_HEAD: right: 0;
-#+HTML_HEAD: z-index: 1000;
-#+HTML_HEAD: box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-#+HTML_HEAD: }
-#+HTML_HEAD:
-#+HTML_HEAD: .header a {
-#+HTML_HEAD: color: #ffffff;
-#+HTML_HEAD: text-decoration: none;
-#+HTML_HEAD: font-size: 1.5em;
-#+HTML_HEAD: white-space: nowrap;
-#+HTML_HEAD: transition: all 0.3s ease;
-#+HTML_HEAD: padding: 0px;
-#+HTML_HEAD: }
-#+HTML_HEAD:
-#+HTML_HEAD: .header a:hover {
-#+HTML_HEAD: color: #bababa;
-#+HTML_HEAD: }
-#+HTML_HEAD:
+#+HTML_HEAD: 
+#+HTML_HEAD: /* ─── Header Bar ────────────────────────────────────────── */
 #+HTML_HEAD: @font-face {
-#+HTML_HEAD:   font-family: DOSVGA;
-#+HTML_HEAD:   src: url('/home/praaneshnair/.config/doom/perfect-dos-vga-437-win.ttf') format('truetype');
+  #+HTML_HEAD: font-family: 'DOSVGA';
+  #+HTML_HEAD: src: url('http://compileartisan.dev/Perfect%20DOS%20VGA%20437%20Win.ttf') format('truetype');
 #+HTML_HEAD: }
-#+HTML_HEAD:
-#+HTML_HEAD: /* Table of Contents Sidebar */
-#+HTML_HEAD: #table-of-contents {
-#+HTML_HEAD:   position: fixed;
-#+HTML_HEAD:   left: 0;
-#+HTML_HEAD:   top: 45px;
-#+HTML_HEAD:   width: 280px;
-#+HTML_HEAD:   height: calc(100vh - 45px);
-#+HTML_HEAD:   overflow-y: auto;
-#+HTML_HEAD:   background-color: #f8f8f8;
-#+HTML_HEAD:   border-right: 1px solid #ddd;
-#+HTML_HEAD:   padding: 30px 20px;
-#+HTML_HEAD:   box-sizing: border-box;
-#+HTML_HEAD:   z-index: 10;
+#+HTML_HEAD: 
+#+HTML_HEAD: .header {
+  #+HTML_HEAD: position: fixed;
+  #+HTML_HEAD: top: 0; left: 0; right: 0;
+  #+HTML_HEAD: z-index: 1000;
+  #+HTML_HEAD: height: 48px;
+  #+HTML_HEAD: background: #1a1a2e;
+  #+HTML_HEAD: display: flex;
+  #+HTML_HEAD: align-items: center;
+  #+HTML_HEAD: padding: 0 24px;
+  #+HTML_HEAD: border-bottom: 1px solid rgba(255,255,255,0.06);
 #+HTML_HEAD: }
-#+HTML_HEAD:
-#+HTML_HEAD: #table-of-contents h2 {
-#+HTML_HEAD:   margin-top: 0;
-#+HTML_HEAD:   color: #0000aa;
-#+HTML_HEAD:   font-size: 1.1em;
-#+HTML_HEAD:   border-bottom: 1px solid #ddd;
-#+HTML_HEAD:   padding-bottom: 10px;
-#+HTML_HEAD:   margin-bottom: 15px;
-#+HTML_HEAD: }
-#+HTML_HEAD:
-#+HTML_HEAD: /* Search box styles */
-#+HTML_HEAD: #toc-search {
-#+HTML_HEAD:   width: 100%;
-#+HTML_HEAD:   padding: 8px 12px;
-#+HTML_HEAD:   margin-bottom: 15px;
-#+HTML_HEAD:   border: 1px solid #ddd;
-#+HTML_HEAD:   border-radius: 4px;
-#+HTML_HEAD:   font-size: 0.9em;
-#+HTML_HEAD:   box-sizing: border-box;
-#+HTML_HEAD: }
-#+HTML_HEAD:
-#+HTML_HEAD: #toc-search:focus {
-#+HTML_HEAD:   outline: none;
-#+HTML_HEAD:   border-color: #0000aa;
-#+HTML_HEAD: }
-#+HTML_HEAD:
-#+HTML_HEAD: #table-of-contents ul {
-#+HTML_HEAD:   list-style-type: none;
-#+HTML_HEAD:   padding-left: 0;
-#+HTML_HEAD:   margin: 0;
-#+HTML_HEAD: }
-#+HTML_HEAD:
-#+HTML_HEAD: #table-of-contents ul ul {
-#+HTML_HEAD:   padding-left: 15px;
-#+HTML_HEAD:   margin-top: 5px;
-#+HTML_HEAD: }
-#+HTML_HEAD:
-#+HTML_HEAD: #table-of-contents li {
-#+HTML_HEAD:   margin: 8px 0;
-#+HTML_HEAD: }
-#+HTML_HEAD:
-#+HTML_HEAD: #table-of-contents a {
-#+HTML_HEAD:   color: #555;
-#+HTML_HEAD:   text-decoration: none;
-#+HTML_HEAD:   display: block;
-#+HTML_HEAD:   padding: 5px 10px;
-#+HTML_HEAD:   border-radius: 4px;
-#+HTML_HEAD:   transition: all 0.2s ease;
-#+HTML_HEAD:   font-size: 0.95em;
-#+HTML_HEAD: }
-#+HTML_HEAD:
-#+HTML_HEAD: #table-of-contents a:hover {
-#+HTML_HEAD:   color: #0000aa;
-#+HTML_HEAD:   background-color: #e8e8ff;
-#+HTML_HEAD: }
-#+HTML_HEAD:
-#+HTML_HEAD: /* Active TOC link (scroll spy) */
-#+HTML_HEAD: #table-of-contents a.active {
-#+HTML_HEAD:   color: #0000aa;
-#+HTML_HEAD:   background-color: #e8e8ff;
-#+HTML_HEAD:   font-weight: bold;
-#+HTML_HEAD:   border-left: 3px solid #0000aa;
-#+HTML_HEAD: }
-#+HTML_HEAD:
-#+HTML_HEAD: /* Hidden items during search */
-#+HTML_HEAD: #table-of-contents li.hidden {
-#+HTML_HEAD:   display: none;
-#+HTML_HEAD: }
-#+HTML_HEAD:
-#+HTML_HEAD: /* Main content area */
-#+HTML_HEAD: #content {
-#+HTML_HEAD:   margin-left: 280px;
-#+HTML_HEAD:   margin-top: 45px;
-#+HTML_HEAD:   padding: 40px;
-#+HTML_HEAD:   background-color: #ffffff;
-#+HTML_HEAD:   min-height: calc(100vh - 45px);
-#+HTML_HEAD: }
-#+HTML_HEAD: table {
-  #+HTML_HEAD: border-collapse: collapse;
-  #+HTML_HEAD: margin: 1.5rem auto;
-  #+HTML_HEAD: font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+#+HTML_HEAD: 
+#+HTML_HEAD: .header a {
+  #+HTML_HEAD: font-family: 'DOSVGA', 'Courier New', monospace;
   #+HTML_HEAD: font-size: 1rem;
+  #+HTML_HEAD: letter-spacing: 0.03em;
+  #+HTML_HEAD: text-decoration: none;
+  #+HTML_HEAD: line-height: 1;
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: .header a .dim   { color: #7878aa; }
+#+HTML_HEAD: .header a .bright { color: #d8d8ff; }
+#+HTML_HEAD: /* ─── Sidebar ───────────────────────────────────────────── */
+#+HTML_HEAD: #table-of-contents {
+  #+HTML_HEAD: position: fixed;
+  #+HTML_HEAD: top: 48px;
+  #+HTML_HEAD: left: 0;
+  #+HTML_HEAD: width: 260px;
+  #+HTML_HEAD: height: calc(100vh - 48px);
+  #+HTML_HEAD: overflow-y: auto;
   #+HTML_HEAD: background: #ffffff;
-  #+HTML_HEAD: box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  #+HTML_HEAD: border-right: 0.5px solid #e0e0e6;
+  #+HTML_HEAD: padding: 20px 12px;
+  #+HTML_HEAD: scrollbar-width: thin;
+  #+HTML_HEAD: scrollbar-color: #d0d0d8 transparent;
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: #table-of-contents::-webkit-scrollbar {
+  #+HTML_HEAD: width: 4px;
+#+HTML_HEAD: }
+#+HTML_HEAD: #table-of-contents::-webkit-scrollbar-thumb {
+  #+HTML_HEAD: background: #d0d0d8;
+  #+HTML_HEAD: border-radius: 4px;
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: #table-of-contents h2 {
+  #+HTML_HEAD: font-size: 10px;
+  #+HTML_HEAD: font-weight: 500;
+  #+HTML_HEAD: letter-spacing: 0.1em;
+  #+HTML_HEAD: text-transform: uppercase;
+  #+HTML_HEAD: color: #999;
+  #+HTML_HEAD: margin: 0 8px 12px;
+  #+HTML_HEAD: padding-bottom: 10px;
+  #+HTML_HEAD: border-bottom: 0.5px solid #e8e8ee;
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: /* Search box */
+#+HTML_HEAD: .toc-search-wrap {
+  #+HTML_HEAD: position: relative;
+  #+HTML_HEAD: margin: 0 0 12px;
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: .toc-search-wrap::before {
+  #+HTML_HEAD: content: "";
+  #+HTML_HEAD: position: absolute;
+  #+HTML_HEAD: left: 10px;
+  #+HTML_HEAD: top: 50%;
+  #+HTML_HEAD: transform: translateY(-50%);
+  #+HTML_HEAD: width: 14px;
+  #+HTML_HEAD: height: 14px;
+  #+HTML_HEAD: background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E") no-repeat center;
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: #toc-search {
+  #+HTML_HEAD: width: 100%;
+  #+HTML_HEAD: padding: 7px 10px 7px 30px;
+  #+HTML_HEAD: font-size: 13px;
+  #+HTML_HEAD: border: 0.5px solid #e0e0e6;
+  #+HTML_HEAD: border-radius: 8px;
+  #+HTML_HEAD: background: #f8f8fc;
+  #+HTML_HEAD: color: #1a1a1a;
+  #+HTML_HEAD: outline: none;
+  #+HTML_HEAD: transition: border-color 0.15s, background 0.15s;
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: #toc-search:focus {
+  #+HTML_HEAD: border-color: #4444cc;
+  #+HTML_HEAD: background: #ffffff;
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: #toc-search::placeholder {
+  #+HTML_HEAD: color: #bbb;
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: /* TOC links */
+#+HTML_HEAD: #table-of-contents ul {
+  #+HTML_HEAD: list-style: none;
+  #+HTML_HEAD: padding: 0;
+  #+HTML_HEAD: margin: 0;
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: #table-of-contents ul ul {
+  #+HTML_HEAD: padding-left: 14px;
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: #table-of-contents li {
+  #+HTML_HEAD: margin: 2px 0;
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: #table-of-contents a {
+  #+HTML_HEAD: display: block;
+  #+HTML_HEAD: padding: 5px 10px;
+  #+HTML_HEAD: font-size: 13px;
+  #+HTML_HEAD: color: #555;
+  #+HTML_HEAD: border-radius: 6px;
+  #+HTML_HEAD: transition: background 0.12s, color 0.12s;
+  #+HTML_HEAD: white-space: nowrap;
+  #+HTML_HEAD: overflow: hidden;
+  #+HTML_HEAD: text-overflow: ellipsis;
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: #table-of-contents a:hover {
+  #+HTML_HEAD: background: #f0f0fa;
+  #+HTML_HEAD: color: #2222cc;
+  #+HTML_HEAD: text-decoration: none;
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: #table-of-contents a.active {
+  #+HTML_HEAD: background: #ededff;
+  #+HTML_HEAD: color: #2222aa;
+  #+HTML_HEAD: font-weight: 500;
+  #+HTML_HEAD: border-left: 2.5px solid #2222aa;
+  #+HTML_HEAD: padding-left: 8px;
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: #table-of-contents li.hidden {
+  #+HTML_HEAD: display: none;
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: /* ─── Main Content ──────────────────────────────────────── */
+#+HTML_HEAD: #content {
+  #+HTML_HEAD: margin-left: 260px;
+  #+HTML_HEAD: margin-top: 48px;
+  #+HTML_HEAD: padding: 40px 48px;
+  #+HTML_HEAD: max-width: 900px;
+  #+HTML_HEAD: min-height: calc(100vh - 48px);
+  #+HTML_HEAD: background: #ffffff;
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: #postamble, #preamble {
+  #+HTML_HEAD: margin-left: 260px;
+  #+HTML_HEAD: padding: 20px 48px;
+  #+HTML_HEAD: font-size: 13px;
+  #+HTML_HEAD: color: #999;
+  #+HTML_HEAD: border-top: 0.5px solid #e8e8ee;
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: /* ─── Code ──────────────────────────────────────────────── */
+#+HTML_HEAD: code {
+  #+HTML_HEAD: font-family: 'Courier New', Courier, monospace;
+  #+HTML_HEAD: font-size: 0.88em;
+  #+HTML_HEAD: background: #f2f2f8;
+  #+HTML_HEAD: border: 0.5px solid #e0e0ec;
+  #+HTML_HEAD: border-radius: 4px;
+  #+HTML_HEAD: padding: 1px 5px;
+  #+HTML_HEAD: color: #1a1a1a;
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: pre {
+  #+HTML_HEAD: background: #16161e;
+  #+HTML_HEAD: color: #d0d0e0;
+  #+HTML_HEAD: border-radius: 10px;
+  #+HTML_HEAD: padding: 16px 20px;
+  #+HTML_HEAD: overflow-x: auto;
+  #+HTML_HEAD: font-size: 13.5px;
+  #+HTML_HEAD: line-height: 1.6;
+  #+HTML_HEAD: border: 0.5px solid rgba(255,255,255,0.06);
+  #+HTML_HEAD: margin: 1.5rem 0;
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: pre code {
+  #+HTML_HEAD: font-size: inherit;
+  #+HTML_HEAD: background: none;
+  #+HTML_HEAD: border: none;
+  #+HTML_HEAD: padding: 0;
+  #+HTML_HEAD: color: inherit;
+  #+HTML_HEAD: border-radius: 0;
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: pre.src {
+  #+HTML_HEAD: position: relative;
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: /* ─── Tables ────────────────────────────────────────────── */
+#+HTML_HEAD: table {
+  #+HTML_HEAD: width: 100%;
+  #+HTML_HEAD: border-collapse: collapse;
+  #+HTML_HEAD: font-size: 14px;
+  #+HTML_HEAD: margin: 1.5rem 0;
+  #+HTML_HEAD: border: 0.5px solid #e0e0e8;
   #+HTML_HEAD: border-radius: 10px;
   #+HTML_HEAD: overflow: hidden;
 #+HTML_HEAD: }
 #+HTML_HEAD: 
-#+HTML_HEAD: table[border] {
-  #+HTML_HEAD: border: none;
-#+HTML_HEAD: }
-#+HTML_HEAD: 
-#+HTML_HEAD: td {
-  #+HTML_HEAD: padding: 0.75rem 1.1rem;
-  #+HTML_HEAD: text-align: center;
-  #+HTML_HEAD: border: 1px solid #e5e7eb;
+#+HTML_HEAD: th {
+  #+HTML_HEAD: background: #f5f5fa;
   #+HTML_HEAD: font-weight: 500;
-  #+HTML_HEAD: color: #111827;
-#+HTML_HEAD: }
-#+HTML_HEAD: 
-#+HTML_HEAD: td.org-left {
-  #+HTML_HEAD: text-align: center;
-#+HTML_HEAD: }
-#+HTML_HEAD: 
-#+HTML_HEAD: tbody tr:nth-child(even) {
-  #+HTML_HEAD: background-color: #f9fafb;
-#+HTML_HEAD: }
-#+HTML_HEAD: 
-#+HTML_HEAD: tbody tr:hover {
-  #+HTML_HEAD: background-color: #eef2ff;
+  #+HTML_HEAD: font-size: 12px;
+  #+HTML_HEAD: letter-spacing: 0.04em;
+  #+HTML_HEAD: text-transform: uppercase;
+  #+HTML_HEAD: color: #666;
+  #+HTML_HEAD: padding: 10px 16px;
+  #+HTML_HEAD: text-align: left;
+  #+HTML_HEAD: border-bottom: 0.5px solid #e0e0e8;
 #+HTML_HEAD: }
 #+HTML_HEAD: 
 #+HTML_HEAD: td {
-  #+HTML_HEAD: letter-spacing: 0.05em;
+  #+HTML_HEAD: padding: 10px 16px;
+  #+HTML_HEAD: border-bottom: 0.5px solid #f0f0f4;
+  #+HTML_HEAD: color: #1a1a1a;
+  #+HTML_HEAD: font-weight: 400;
 #+HTML_HEAD: }
-#+HTML_HEAD:
-#+HTML_HEAD: /* Responsive Design */
-#+HTML_HEAD: @media screen and (max-width: 768px) {
-#+HTML_HEAD:   #table-of-contents {
-#+HTML_HEAD:     position: static;
-#+HTML_HEAD:     width: 100%;
-#+HTML_HEAD:     height: auto;
-#+HTML_HEAD:     border-right: none;
-#+HTML_HEAD:     border-bottom: 2px solid #0000aa;
-#+HTML_HEAD:   }
-#+HTML_HEAD:  pre.src {
-#+HTML_HEAD:    position: relative;
-#+HTML_HEAD:    left: 50%;
-#+HTML_HEAD:    right: 50%;
-#+HTML_HEAD:    margin-left: -50vw;
-#+HTML_HEAD:    margin-right: -50vw;
-#+HTML_HEAD:    width: 100vw;
-#+HTML_HEAD:    border-radius: 0;
-#+HTML_HEAD:    box-sizing: border-box;
-#+HTML_HEAD:  }
-#+HTML_HEAD:   
-#+HTML_HEAD:   #content {
-#+HTML_HEAD:     margin-left: 0;
-#+HTML_HEAD:   }
-#+HTML_HEAD:   
-#+HTML_HEAD:   body {
-#+HTML_HEAD:     font-size: 14px;
-#+HTML_HEAD:     padding: 10px;
-#+HTML_HEAD:   }
-#+HTML_HEAD:   h1 {
-#+HTML_HEAD:     font-size: 1.5em;
-#+HTML_HEAD:   }
-#+HTML_HEAD:   pre {
-#+HTML_HEAD:     font-size: 1.3em;
-#+HTML_HEAD:   }
+#+HTML_HEAD: 
+#+HTML_HEAD: td.org-left { text-align: left; }
+#+HTML_HEAD: td.org-right { text-align: right; }
+#+HTML_HEAD: td.org-center { text-align: center; }
+#+HTML_HEAD: 
+#+HTML_HEAD: tbody tr:last-child td { border-bottom: none; }
+#+HTML_HEAD: 
+#+HTML_HEAD: tbody tr:hover { background: #f7f7fd; }
+#+HTML_HEAD: 
+#+HTML_HEAD: /* ─── Images ────────────────────────────────────────────── */
+#+HTML_HEAD: img {
+  #+HTML_HEAD: max-width: 100%;
+  #+HTML_HEAD: height: auto;
+  #+HTML_HEAD: display: block;
+  #+HTML_HEAD: margin: 1.5rem auto;
+  #+HTML_HEAD: border-radius: 8px;
 #+HTML_HEAD: }
-#+HTML_HEAD:
-#+HTML_HEAD: @media screen and (max-width: 480px) {
-#+HTML_HEAD:   body {
-#+HTML_HEAD:     font-size: 12px;
-#+HTML_HEAD:     padding: 5px;
-#+HTML_HEAD:   }
-#+HTML_HEAD:   h1 {
-#+HTML_HEAD:     font-size: 1.3em;
-#+HTML_HEAD:   }
-#+HTML_HEAD:   pre {
-#+HTML_HEAD:     font-size: 1.3em;
-#+HTML_HEAD:   }
+#+HTML_HEAD: 
+#+HTML_HEAD: /* ─── Responsive ────────────────────────────────────────── */
+#+HTML_HEAD: @media (max-width: 768px) {
+  #+HTML_HEAD: #table-of-contents {
+    #+HTML_HEAD: position: static;
+    #+HTML_HEAD: width: 100%;
+    #+HTML_HEAD: height: auto;
+    #+HTML_HEAD: border-right: none;
+    #+HTML_HEAD: border-bottom: 1px solid #e0e0e8;
+    #+HTML_HEAD: padding: 16px;
+  #+HTML_HEAD: }
+#+HTML_HEAD: 
+  #+HTML_HEAD: #content {
+    #+HTML_HEAD: margin-left: 0;
+    #+HTML_HEAD: margin-top: 48px;
+    #+HTML_HEAD: padding: 24px 20px;
+  #+HTML_HEAD: }
+#+HTML_HEAD: 
+  #+HTML_HEAD: #postamble, #preamble {
+    #+HTML_HEAD: margin-left: 0;
+    #+HTML_HEAD: padding: 16px 20px;
+  #+HTML_HEAD: }
+#+HTML_HEAD: 
+  #+HTML_HEAD: pre {
+    #+HTML_HEAD: border-radius: 0;
+    #+HTML_HEAD: margin-left: -20px;
+    #+HTML_HEAD: margin-right: -20px;
+  #+HTML_HEAD: }
+#+HTML_HEAD: 
+  #+HTML_HEAD: h1 { font-size: 1.4rem; }
+  #+HTML_HEAD: h2 { font-size: 1.2rem; }
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: @media (max-width: 480px) {
+  #+HTML_HEAD: body { font-size: 14px; }
+  #+HTML_HEAD: #content { padding: 20px 16px; }
+  #+HTML_HEAD: h1 { font-size: 1.25rem; }
 #+HTML_HEAD: }
 #+HTML_HEAD: </style>
 #+HTML_HEAD: <div class="header">
-#+HTML_HEAD: <a href="https://compileartisan.pages.dev/">CompileArtisan</a>
+  #+HTML_HEAD: <a href="https://notes.compileartisan.dev">
+    #+HTML_HEAD: <span class="dim">notes.</span><span class="bright">CompileArtisan</span><span class="dim">.dev</span>
+  #+HTML_HEAD: </a>
 #+HTML_HEAD: </div>
 #+HTML_HEAD: <script>
 #+HTML_HEAD: document.addEventListener('DOMContentLoaded', function() {

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: arr
+# uuid: arr
+# key: arr
+# condition: t
+# --
+\text{$1} \xrightarrow[\text{}]{\text{$2}}  \text{$3}
