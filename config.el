@@ -40,10 +40,3 @@
  'org-babel-load-languages
  '((python . t)))
 
-;; org
-(after! ox-latex
-  (setenv "TEXINPUTS"
-          (concat "/home/praaneshnair/.config/doom/templates/org/homework//:"
-                  (getenv "TEXINPUTS")))
-  (setq org-latex-pdf-process
-        '("latexmk -pdf -f -interaction=nonstopmode -output-directory=%o %f")))

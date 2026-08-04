@@ -47,3 +47,16 @@
         org-ref-pdf-directory "~/path/to/pdfs"))
 
 
+
+;; hw exports
+(after! ox-latex
+  (setenv "TEXINPUTS"
+          (concat "/home/praaneshnair/.config/doom/templates/org/homework//:"
+                  (getenv "TEXINPUTS")))
+  (setq org-latex-pdf-process
+        '("latexmk -pdf -f -interaction=nonstopmode -output-directory=%o %f"))
+
+  ;; Map #+begin_answer to \begin{answer}
+  (add-to-list 'org-latex-custom-lang-environments '("answer" . "answer"))
+  ;; Map #+begin_hint to \begin{hint}
+  (add-to-list 'org-latex-custom-lang-environments '("hint" . "hint")))
