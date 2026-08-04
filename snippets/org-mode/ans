@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: ans
+# uuid: ans
+# key: ans
+# condition: t
+# --
+
+#+begin_export latex
+\begin{answer}
+
+\end{answer}
+#+end_export

@@ -2,150 +2,182 @@
 \ProvidesPackage{homework}
 
 \usepackage[margin=1in]{geometry}
-
-\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage[usenames,dvipsnames,svgnames]{xcolor}
 \usepackage[many]{tcolorbox}
-
 \usepackage{mathtools,amsthm,amssymb,amsfonts,bm}
 \usepackage{thmtools,amsmath}
 \usepackage{marginnote,sidenotes}
-\usepackage{fancyhdr}   
+\usepackage{fancyhdr}
 \usepackage{titlesec}
 \usepackage{setspace}
 \usepackage{enumitem}
 \usepackage{graphicx, svg}
-
-\usepackage[bookmarks=true]{hyperref} 
+\usepackage[bookmarks=true]{hyperref}
 \usepackage{bookmark}
 
+%% Fonts: serif body, sans-serif headings — clean modern contrast %%
+\usepackage{mathpazo}
+\usepackage[scaled=0.92]{helvet}
+\renewcommand{\familydefault}{\rmdefault}
+
+%% Accent color — change this one line to retheme the whole document %%
+\definecolor{accent}{HTML}{2A5CAA}
+\definecolor{accentlight}{HTML}{EAF0FA}
+\definecolor{inkgray}{HTML}{2B2B2B}
+
 %% Constants %%
+% Making epsilons look like epsilons...
+\renewcommand{\epsilon}{\varepsilon}
+\newcommand{\eps}{\epsilon}
+\newcommand{\A}{\forall}
+\newcommand{\E}{\exists}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
 
-    % Making epsilons look like epsilons...
-    \renewcommand{\epsilon}{\varepsilon}
-
-    \newcommand{\eps}{\epsilon}
-    \newcommand{\A}{\forall}
-    \newcommand{\E}{\exists}
-    \newcommand{\N}{\mathbb{N}}
-    \newcommand{\Q}{\mathbb{Q}}
-    \newcommand{\R}{\mathbb{R}}
-    \newcommand{\Z}{\mathbb{Z}}
-    
 %% Frequently-used snippets %%
-
-    \newcommand{\abs}[1]{\left| #1 \right|}
-    \newcommand{\absle}[1]{\abs{#1} < \eps}
-    \newcommand{\absld}[1]{\abs{#1} < \delta}
-    
-    \newcommand{\integral}[2]{\int_{#1}^{#2}}
-    \newcommand{\intab}{\integral{a}{b}}
-    
-    \newcommand{\func}[2][f]{#1 \colon #2 \to \R}
-    \newcommand{\fabr}{\func[f]{[a,b]}}
-    \newcommand{\fog}{f \circ g}
-    \newcommand{\gof}{g \circ f}
-    
-    \newcommand{\set}[1]{\left\{ #1 \right\}}
-    \newcommand{\partition}[1][P]{#1 = \set{x_0,x_1,\ldots,x_n}}
-    
-    \newcommand{\deltaxi}{\Delta x_{i}}
-    \newcommand{\deltaxk}{\Delta x_{k}}
-    \newcommand{\lowersum}[1][f]{L(#1,P) = \sum^n_{i=1} m_i\deltaxi}
-    \newcommand{\uppersum}[1][f]{U(#1,P) = \sum^n_{i=1} M_i\deltaxi}
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\absle}[1]{\abs{#1} < \eps}
+\newcommand{\absld}[1]{\abs{#1} < \delta}
+\newcommand{\integral}[2]{\int_{#1}^{#2}}
+\newcommand{\intab}{\integral{a}{b}}
+\newcommand{\func}[2][f]{#1 \colon #2 \to \R}
+\newcommand{\fabr}{\func[f]{[a,b]}}
+\newcommand{\fog}{f \circ g}
+\newcommand{\gof}{g \circ f}
+\newcommand{\set}[1]{\left\{ #1 \right\}}
+\newcommand{\partition}[1][P]{#1 = \set{x_0,x_1,\ldots,x_n}}
+\newcommand{\deltaxi}{\Delta x_{i}}
+\newcommand{\deltaxk}{\Delta x_{k}}
+\newcommand{\lowersum}[1][f]{L(#1,P) = \sum^n_{i=1} m_i\deltaxi}
+\newcommand{\uppersum}[1][f]{U(#1,P) = \sum^n_{i=1} M_i\deltaxi}
 
 %% Convenience Wrappers %%
-
-    \newcommand{\hint}[1]{
-        \begin{tcolorbox}[title=Hint]
-            #1
-        \end{tcolorbox}
-    }
+\newcommand{\hint}[1]{
+\begin{tcolorbox}[
+  title=\textsf{\textbf{Hint}},
+  colback=accentlight,
+  colbacktitle=accent,
+  coltitle=white,
+  colframe=accent,
+  boxrule=0.4pt,
+  fonttitle=\small,
+  left=6pt,right=6pt,top=4pt,bottom=4pt
+]
+#1
+\end{tcolorbox}
+}
 
 %% Document Setup %%
+%% \Title/\Author/\Date always reflect the *latest* \title{}/\author{}/\date{}
+%% call, no matter when \usepackage{homework} is loaded relative to them. %%
+\makeatletter
+\newcommand{\Title}{\@title}
+\newcommand{\Author}{\@author}
+\newcommand{\Date}{\@date}
+\makeatother
 
-    \makeatletter
-    \let\Title\@title
-    \let\Author\@author
-    \let\Date\@date
-    \makeatother
-    
 %% \usepackage{graphicx, svg} %%
+\graphicspath{{images/}}
+\svgpath{{images/}}
 
-    \graphicspath{{images/}}
-    \svgpath{{images/}}
+%% Minimal, modern title block (call \maketitle as usual) %%
+\renewcommand{\maketitle}{%
+  \begin{center}
+    {\sffamily\bfseries\LARGE \color{accent} \Title \par}
+    \vspace{4pt}
+    {\color{accent!60!black}\rule{0.3\linewidth}{1.1pt}}
+    \vspace{6pt}
+    {\sffamily\large \Author \par}
+    \vspace{2pt}
+    {\sffamily\small \color{gray} \Date \par}
+  \end{center}
+  \vspace{10pt}
+}
 
-%% \usepackage{fancyhdr} %%
-
-    \pagestyle{fancy}
-    \setlength{\headheight}{25pt}
-    \lhead{\Title}
-    \rhead{\Author}
+%% \usepackage{fancyhdr} — minimal header/footer with accent rule %%
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{22pt}
+\renewcommand{\headrulewidth}{0.6pt}
+\renewcommand{\footrulewidth}{0pt}
+\renewcommand{\headrule}{{\color{accent}\hrule width\headwidth height\headrulewidth}}
+\lhead{\sffamily\small\color{inkgray} \Title}
+\rhead{\sffamily\small\color{inkgray} \Author}
+\cfoot{\sffamily\small\color{accent} \thepage}
 
 %% \usepackage{hyperref} %%
+\hypersetup{
+  pdfauthor={\Author},
+  pdftitle={\Title},
+  linktoc={all},
+  colorlinks=true,
+  linkcolor=accent,
+  citecolor=accent,
+  urlcolor=accent
+}
 
-    \hypersetup{
-        pdfauthor={\Author},
-        pdftitle={\Title},
-        linktoc={all}
-    }
+%% \usepackage{titlesec} — bold sans-serif section titles with accent rule %%
+\titleformat{\section}
+  {\sffamily\bfseries\Large\color{accent}}
+  {\thesection}
+  {0.6em}
+  {}
+  [{\color{accent!50!white}\titlerule[0.8pt]}]
+\titlespacing*{\section}{0pt}{18pt}{8pt}
 
-%% \usepackage{titlesec} %%
+\titleformat{\subsection}[runin]
+  {\sffamily\bfseries\color{inkgray}}
+  {\thesubsection}
+  {0.6em}
+  {}
+\titlespacing*{\subsection}{0pt}{10pt}{6pt}
 
-    \titleformat{\subsection} % command
-        [runin] % shape
-        {\normalfont\bfseries} % format
-        {\thesubsection} % label
-        {1em} % sep
-        {}
-        
-    \titleformat{\subsubsection} % command
-        [runin] % shape
-        {\normalfont\bfseries} % format
-        {\thesubsubsection} % label
-        {1em} % sep
-        {}
-        
+\titleformat{\subsubsection}[runin]
+  {\sffamily\bfseries\itshape\color{inkgray}}
+  {\thesubsubsection}
+  {0.6em}
+  {}
+
 %% Spacing/Formatting %%
+\setstretch{1.25}
+\newcommand{\resetpar}{
+\setlength{\parskip}{0.5em}
+}
 
-    \setstretch{1.3}
-    \newcommand{\resetpar}{
-        \setlength{\parskip}{0.5em}
-    }
+%% tcolorbox Environments — consistent accent theme, flat/modern (sharp corners) %%
+\renewenvironment{proof}
+{{\sffamily\bfseries\color{accent} Proof. }\resetpar}
+{\hfill$\blacksquare$}
 
-%% tcolorbox Environments %%
+\tcbset{
+  boxrule=0pt,
+  sharp corners,
+  enhanced jigsaw,
+  breakable,
+  left=8pt,right=8pt,top=6pt,bottom=6pt
+}
 
-    \renewenvironment{proof}
-        {{\sffamily\bfseries Proof. }\resetpar}
-        {\qed}
+\newtcolorbox{answer}{
+  beforeafter skip balanced=14pt,
+  colback=accentlight,
+  borderline west={3pt}{0pt}{accent}
+}
 
-    \tcbset{
-        boxrule=0pt,
-        sharp corners,
-        enhanced jigsaw,
-        drop fuzzy shadow,
-        breakable
-    }
-    
-    \newtcolorbox{answer}{
-        beforeafter skip balanced=25pt,
-        colback={White!90!CornflowerBlue},
-        borderline west={3pt}{0pt}{NavyBlue!80!white}
-    }
-        
-    \tcolorboxenvironment{proof}{
-        beforeafter skip balanced=25pt,
-        colback={White!90!CornflowerBlue},
-        borderline west={3pt}{0pt}{NavyBlue!80!white}
-    }
-    
+\tcolorboxenvironment{proof}{
+  beforeafter skip balanced=14pt,
+  colback=White!96!accent,
+  borderline west={3pt}{0pt}{accent!70!black}
+}
+
 %% Show code and output %%
 %% (From: https://tex.stackexchange.com/questions/194854/how-to-show-latex-commands-in-text-mode/392818) %%
-
-    \newcommand{\gfcb}[1]{%
-        \fcolorbox{white}{gray!10!}{\quad\strut #1\quad}
-        } % gfcb := gray fcolorbox
-        
-    \newcommand{\cop}[1]{%
-        \gfcb{\texttt{\detokenize{#1}}} 
-        \ensuremath{\quad \longrightarrow \quad & #1}
-        } % cop := code output
+\newcommand{\gfcb}[1]{%
+\fcolorbox{accent!30!white}{accentlight}{\quad\strut #1\quad}
+} % gfcb := gray fcolorbox, now accent-tinted
+\newcommand{\cop}[1]{%
+\gfcb{\texttt{\detokenize{#1}}}
+\ensuremath{\quad \longrightarrow \quad & #1}
+} % cop := code output
