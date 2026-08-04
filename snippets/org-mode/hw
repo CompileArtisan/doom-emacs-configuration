@@ -1,0 +1,21 @@
+# -*- mode: snippet -*-
+# name: hw
+# uuid: hw
+# key: hw
+# --
+
+#+AUTHOR: Praanesh Nair
+#+OPTIONS: toc:nil num:t
+#+LATEX_HEADER: \title{MTH312 HW3}
+#+LATEX_HEADER: \author{Praanesh Nair}
+#+LATEX_HEADER: \usepackage{homework}
+#+LATEX_HEADER: \graphicspath{{/home/praaneshnair/.config/doom/templates/org/homework/images/}}
+
+* Problem 1
+Let $f \colon \R \to \R$ be continuous on $[a,b]$.
+
+#+begin_export latex
+\begin{answer}
+Proof goes here.
+\end{answer}
+#+end_export
