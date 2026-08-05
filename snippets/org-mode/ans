@@ -5,8 +5,7 @@
 # condition: t
 # --
 
-#+begin_export latex
-\begin{answer}
 
-\end{answer}
-#+end_export
+#+begin_answer
+
+#+end_answer
