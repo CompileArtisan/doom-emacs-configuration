@@ -5,6 +5,9 @@
 \usepackage[T1]{fontenc}
 \usepackage[usenames,dvipsnames,svgnames]{xcolor}
 \usepackage[many]{tcolorbox}
+\tcbuselibrary{listings,skins,breakable}
+\usepackage{listings}
+\usepackage{etoolbox}
 \usepackage{mathtools,amsthm,amssymb,amsfonts,bm}
 \usepackage{thmtools,amsmath}
 \usepackage{marginnote,sidenotes}
@@ -25,6 +28,14 @@
 \definecolor{accent}{HTML}{2A5CAA}
 \definecolor{accentlight}{HTML}{EAF0FA}
 \definecolor{inkgray}{HTML}{2B2B2B}
+
+%% Syntax-highlighting palette for code listings (kept in the same accent family) %%
+\definecolor{codebg}{HTML}{F7F9FC}
+\definecolor{codekeyword}{HTML}{2A5CAA}
+\definecolor{codecomment}{HTML}{7A8B99}
+\definecolor{codestring}{HTML}{B0592E}
+\definecolor{codenumber}{HTML}{3E7C59}
+\definecolor{coderule}{HTML}{2A5CAA}
 
 %% Constants %%
 % Making epsilons look like epsilons...
@@ -181,3 +192,46 @@
 \gfcb{\texttt{\detokenize{#1}}}
 \ensuremath{\quad \longrightarrow \quad & #1}
 } % cop := code output
+
+%% Source code blocks — syntax-highlighted, boxed to match the accent theme %%
+\lstdefinestyle{hwcode}{
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{codekeyword}\bfseries,
+  commentstyle=\color{codecomment}\itshape,
+  stringstyle=\color{codestring},
+  numberstyle=\tiny\color{codecomment},
+  backgroundcolor=\color{codebg},
+  showstringspaces=false,
+  breaklines=true,
+  breakatwhitespace=false,
+  tabsize=2,
+  numbers=left,
+  numbersep=8pt,
+  frame=none,
+  columns=fullflexible,
+  keepspaces=true,
+  captionpos=b,
+  xleftmargin=0pt,
+}
+\lstset{style=hwcode}
+
+% \begin{code}[Python]{Optional Title}...\end{code}
+% First optional arg: the lstlisting language (e.g. Python, Java, C++). Leave blank for plain text.
+% Second optional arg: a title bar for the box.
+\newtcblisting{code}[2][]{
+  enhanced jigsaw,
+  breakable,
+  sharp corners,
+  boxrule=0pt,
+  left=8pt,right=8pt,top=4pt,bottom=4pt,
+  colback=codebg,
+  listing only,
+  listing options={style=hwcode,language=#1},
+  borderline west={3pt}{0pt}{coderule},
+  \ifstrempty{#2}{}{%
+    title={#2},
+    fonttitle=\sffamily\bfseries\small,
+    colbacktitle=accent,
+    coltitle=white,
+  }%
+}
