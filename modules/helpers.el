@@ -114,3 +114,21 @@
                              "--type" "text/uri-list"))
       (message "Copied %d file URI(s)" (length files)))))
 
+;; Define custom function to export Markdown to PDF via Pandoc using custom templates
+(defun my/markdown-to-pdf ()
+  "Compile current Markdown file to PDF via pandoc using custom homework LaTeX template."
+  (interactive)
+  (unless (buffer-file-name)
+    (user-error "Buffer is not visiting a file"))
+  (when (buffer-modified-p)
+    (save-buffer))
+  (let* ((file (buffer-file-name))
+         (out-file (concat (file-name-sans-extension file) ".pdf"))
+         (process-environment
+          (cons "TEXINPUTS=/home/praaneshnair/.config/doom/templates/org/homework:"
+                process-environment))
+         (command (format "pandoc %s -V header-includes='\\usepackage{homework}' -o %s"
+                          (shell-quote-argument file)
+                          (shell-quote-argument out-file))))
+    (message "Compiling Markdown to PDF...")
+    (async-shell-command command "*pandoc-pdf-output*")))

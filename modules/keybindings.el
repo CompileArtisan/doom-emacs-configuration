@@ -9,6 +9,11 @@
 (map! :leader "o i" #'insert-ieee-org-template)
 (map! :leader "L" #'org-export-region-to-latex)
 
+;; Markdown Mode
+(map! :map markdown-mode-map
+      :leader
+      :desc "Export to PDF via Pandoc" "R" #'my/markdown-to-pdf)
+
 ;; Agenda
 (map! :leader "oat" #'pn/open-agenda-tasks)
 (map! :leader "oar" #'pn/open-agenda-routine)
