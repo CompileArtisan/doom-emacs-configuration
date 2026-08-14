@@ -32,6 +32,10 @@
       :map dired-mode-map
       :n "y f" #'my/yank-file-uri)
 
+(map! :leader
+      :desc "Open Dirvish"
+      "o d" #'dirvish)
+
 ;; LaTeX
 (map! :map latex-mode-map :localleader "p" #'force-latex-preview-update)
 
