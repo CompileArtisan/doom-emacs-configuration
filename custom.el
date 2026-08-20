@@ -16,8 +16,7 @@
      "http://theverge.com/rss/index.xml"
      "https://compileartisan.pages.dev/rss.xml"
      "https://adithyanair.com/rss.xml"))
- '(org-agenda-files
-   '("~/gdrive/garage/events.org"))
+ '(org-agenda-files '("~/gdrive/garage/events.org"))
  '(org-html-head-extra "")
  '(org-latex-classes
    '(("IEEEtran" "\\documentclass[conference]{IEEEtran}"
@@ -50,8 +49,8 @@
      "\\`file:///home/praaneshnair/gitprojects/website/src/content/blog/paste-cat\\.org\\'"
      "\\`file:///home/praaneshnair/OneDrive/Study Material/Semester-4/introduction to design analysis of algorithms DAA/notes/my-notes-on-algorithms\\.org\\'"))
  '(package-selected-packages
-   '(astro-ts-mode csv-mode elfeed mermaid-mode mongo ob-async ob-mongo org-ref
-     pdf-tools))
+   '(astro-ts-mode csv-mode elfeed mermaid-mode mongo ob-async ob-mongo
+     ob-typescript org-ref pdf-tools))
  '(safe-local-variable-values
    '((eval add-to-list 'org-export-before-processing-hook
       (lambda (be) (org-babel-tangle)))

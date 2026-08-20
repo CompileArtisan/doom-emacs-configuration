@@ -1,18 +1,23 @@
 ;;; modules/keybindings.el -*- lexical-binding: t; -*-
 
 ;; Org mode
-(map! :mode 'org :leader "M" #'save-and-export-markdown)
-(map! :mode 'org :leader "R" #'save-and-export-pdf)
-(map! :mode 'org :leader "H" #'save-and-export-html)
+(map! :map org-mode-map
+      :leader
+      :desc "Save and export PDF"
+      "R" #'save-and-export-pdf
+      :desc "Save and export Markdown"
+      "M" #'save-and-export-markdown
+      :desc "Save and export HTML"
+      "H" #'save-and-export-html)
+
 (map! :leader "o o" #'insert-org-setupfile)
 (map! :leader "o m" #'insert-markdown-template)
 (map! :leader "o i" #'insert-ieee-org-template)
 (map! :leader "L" #'org-export-region-to-latex)
 
-;; Markdown Mode
-(map! :map markdown-mode-map
-      :leader
-      :desc "Export to PDF via Pandoc" "R" #'my/markdown-to-pdf)
+(map! :leader
+      :desc "Export to PDF"
+      "R" #'my/export-pdf)
 
 ;; Agenda
 (map! :leader "oat" #'pn/open-agenda-tasks)

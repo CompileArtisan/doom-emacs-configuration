@@ -114,14 +114,20 @@
                              "--type" "text/uri-list"))
       (message "Copied %d file URI(s)" (length files)))))
 
-;; Define custom function to export Markdown to PDF via Pandoc using custom templates
 (defun my/markdown-to-pdf ()
   "Compile current Markdown file to PDF via pandoc using custom homework LaTeX template."
   (interactive)
+
+  ;; Only allow Markdown buffers
+  (unless (derived-mode-p 'markdown-mode)
+    (user-error "This function only works in Markdown buffers"))
+
   (unless (buffer-file-name)
     (user-error "Buffer is not visiting a file"))
+
   (when (buffer-modified-p)
     (save-buffer))
+
   (let* ((file (buffer-file-name))
          (out-file (concat (file-name-sans-extension file) ".pdf"))
          (process-environment
@@ -132,3 +138,16 @@
                           (shell-quote-argument out-file))))
     (message "Compiling Markdown to PDF...")
     (async-shell-command command "*pandoc-pdf-output*")))
+
+(defun my/export-pdf ()
+  "Export PDF according to the current major mode."
+  (interactive)
+  (cond
+   ((derived-mode-p 'markdown-mode)
+    (my/markdown-to-pdf))
+
+   ((derived-mode-p 'org-mode)
+    (save-and-export-pdf))
+
+   (t
+    (user-error "PDF export not configured for %s" major-mode))))
