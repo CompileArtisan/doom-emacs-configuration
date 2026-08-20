@@ -10,6 +10,7 @@
 (load! "modules/keybindings")
 (load! "modules/ob-mongo")
 (load! "modules/jupyter")
+(load! "modules/typescript")
 
 ;; vterm
 (setq vterm-shell "/usr/bin/zsh")
