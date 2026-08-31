@@ -14,6 +14,10 @@
 
 ;; vterm
 (setq vterm-shell "/usr/bin/zsh")
+(add-hook 'vterm-mode-hook
+          (lambda () 
+            (setq display-line-numbers t)))
+
 
 ;; dired
 (add-hook 'dired-mode-hook 'display-line-numbers-mode)
